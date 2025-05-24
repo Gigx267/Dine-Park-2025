@@ -37,8 +37,6 @@
 <section id="hero" class="d-flex align-items-center hero-background-video">
   <video autoplay muted loop playsinline id="heroVideo" class="hero-video-bg">
     <source src="https://cdn.pixabay.com/video/2022/11/30/141046-776768279_tiny.mp4" type="video/mp4">
-    <!-- Optional: Add a WebM version for better browser support -->
-    <!-- <source src="assets/video/your-video.webm" type="video/webm"> -->
     Your browser does not support the video tag.
   </video>
   <div class="container text-center" data-aos="zoom-in" data-aos-delay="100">
@@ -46,12 +44,11 @@
     <h1>Welcome to <span>Dine & Pack</span></h1>
     <h2>Abuja's Premier <br>Culinary Excellence Hub & Hospitality </h2>
     <p class="mt-3 mb-4" style="max-width:600px;margin:auto;">
-    We specialize in delivering world-class dining experiences through corporate catering, social gatherings, and bespoke event planning/management.  We provide high-quality culinary education to aspiring chefs and home cooks, and a fine dining experience at our restaurant. Join us to learn, dine, and grow your passion for food!
+      We specialize in delivering world-class dining experiences through corporate catering, social gatherings, and bespoke event planning/management.  We provide high-quality culinary education to aspiring chefs and home cooks, and a fine dining experience at our restaurant. Join us to learn, dine, and grow your passion for food!
     </p>
-    <div class="btns">
-      <a href="https://www.dineandpack.com.ng/food/Resturant.html " class="btn-menu animated fadeInUp scrollto me-2">Our Restaurant</a>
+    <div class="btns d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://www.dineandpack.com.ng/food/Resturant.html" class="btn-menu animated fadeInUp scrollto me-2">Our Restaurant</a>
       <a href="https://www.dineandpack.com.ng/Dine&Park.html" class="btn-book animated fadeInUp scrollto me-2">Culinary School</a>
-      
       <a href="https://www.dineandpack.com.ng/forms/Project100.html" class="btn-book animated fadeInUp scrollto">Project 100</a>
     </div>
   </div>
@@ -91,6 +88,32 @@
     z-index: 3;
   }
 
+  /* Button spacing for desktop and mobile */
+  .btns {
+    gap: 0.6rem;
+  }
+  .btns a {
+    min-width: 160px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+  }
+  @media (max-width: 768px) {
+    .btns {
+      flex-direction: column !important;
+      gap: 1.2rem !important;
+      align-items: stretch;
+    }
+    .btns a {
+      margin-right: 0 !important;
+      margin-bottom: 0 !important;
+      width: 100%;
+      min-width: unset;
+      font-size: 0.95rem;
+      padding: 0.55rem 1.2rem;
+    }
+  }
+
   /* Animation enhancements */
   .hover-zoom {
     transition: transform 0.5s ease;
@@ -98,7 +121,7 @@
   .hover-zoom:hover {
     transform: scale(1.03);
   }
-  
+
   .hover-scale {
     transition: all 0.3s ease;
   }
@@ -106,14 +129,14 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
   }
-  
+
   .hover-glow {
     transition: box-shadow 0.5s ease;
   }
   .hover-glow:hover {
     box-shadow: 0 0 25px rgba(255,255,255,0.1) !important;
   }
-  
+
   .hover-bounce {
     display: inline-block;
     transition: transform 0.3s ease;
@@ -121,7 +144,7 @@
   .hover-bounce:hover {
     transform: translateY(-5px);
   }
-  
+
   /* Animation delays for staggered effects */
   [data-aos-delay="50"] {
     transition-delay: 50ms;
