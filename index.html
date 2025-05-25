@@ -47,7 +47,7 @@
       We specialize in delivering world-class dining experiences through corporate catering, social gatherings, and bespoke event planning/management.  We provide high-quality culinary education to aspiring chefs and home cooks, and a fine dining experience at our restaurant. Join us to learn, dine, and grow your passion for food!
     </p>
     <div class="btns d-flex flex-wrap justify-content-center gap-3">
-      <a href="https://www.dineandpack.com.ng/food/Resturant.html" class="btn-menu animated fadeInUp scrollto me-2">Our Restaurant</a>
+
       <a href="https://www.dineandpack.com.ng/Dine&Park.html" class="btn-book animated fadeInUp scrollto me-2">Culinary School</a>
       <a href="https://www.dineandpack.com.ng/forms/Project100.html" class="btn-book animated fadeInUp scrollto">Project 100</a>
     </div>
@@ -513,6 +513,150 @@ img.img-fluid.rounded.shadow {
 @media (max-width: 991px) {
   .hospitality-service .row > div {
     margin-bottom: 2rem;
+  }
+}
+</style>
+<!-- ======= Restaurant Section (Dark Neon Theme with Friendly Vibes) ======= -->
+<section id="restaurant" class="restaurant-section section-dark">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 class="neon-text">Friendly Atmosphere &amp; Fresh Ingredients</h2>
+      <p>Abuja’s Melting Pot of Culinary Dishes by Artisanal Chefs</p>
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="restaurant-box p-4 rounded shadow-sm bg-secondary text-white">
+          <p>
+            <strong>Our restaurant</strong> is a vibrant hub where global flavors dance on your plate. It's a playground where learning mingles with laughter and deliciousness. Children embark on culinary adventures with our interactive, healthy menus while climbing trees, digging in our sensory garden, and building friendships in our outdoor play spaces. Parents unwind amidst the serene landscape, enjoying artisanal bites and refreshing drinks.
+          </p>
+          <p>
+            Indulge in gourmet dishes that celebrate bold flavors, accompanied by workshops and interactive displays that showcase the rich traditions behind each meal. From spicy Nigerian stews to aromatic Asian stir-fries, our chefs take you on a journey through continents—igniting curiosity and promoting cultural understanding.
+          </p>
+          <p>
+            Gather with friends and family in our open-air courtyard, sharing plates and stories that weave the tapestry of our world.
+          </p>
+          <hr class="my-4" style="border-color: #0ff8fc;">
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i><strong>Special Recipes:</strong> Taste of a Natural Dining Experience</li>
+            <li class="mb-2"><i class="bi bi-emoji-heart-eyes text-success me-2"></i>Menu celebrates vibrant, plant-based cuisine and seasonal produce.</li>
+            <li class="mb-2"><i class="bi bi-basket-fill text-info me-2"></i>Guilt-free alternatives alongside locally sourced meats and seafood.</li>
+            <li class="mb-2"><i class="bi bi-people-fill text-primary me-2"></i>Share vibrant small plates, sip creative cocktails, and groove to our lively music.</li>
+          </ul>
+          <div class="mt-4 text-center">
+            <span class="badge neon-text-sm fs-5 py-2 px-4">A World of Flavor, Friendship, and Fun</span>
+          </div>
+        </div>
+      </div>
+      <!-- Optional: Add a bento-style or single image if desired -->
+      <div class="col-lg-6">
+        <div class="restaurant-bento-grid">
+          <div class="bento-item bento-item-lg">
+            <img src="b1.png" alt="Restaurant Ambience" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="bento-item">
+            <img src="b2.png" alt="Families Dining" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="bento-item">
+            <img src="b7.png" alt="Kids Play Area" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="bento-item bento-item-wide">
+            <img src="b3.png" alt="Signature Dishes" class="img-fluid rounded shadow-sm">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.restaurant-section.section-dark {
+  background: #181a1b;
+  color: #f3f3f3;
+  padding: 60px 0 60px 0;
+}
+.section-dark .section-title h2,
+.section-dark .section-title .neon-text {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow:
+    0 0 10px #0ff8fc,
+    0 0 20px #0ff8fc,
+    0 0 30px #0ff8fc,
+    0 0 40px #0ff8fc44;
+  letter-spacing: 1px;
+}
+.neon-text-sm {
+  color: #ffc107;
+  text-shadow: 0 0 8px #ffc107, 0 0 16px #fffa90;
+}
+.bg-secondary {
+  background-color: #232527 !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.fs-5 {
+  font-size: 1.25rem !important;
+}
+
+/* Bento-style grid for images */
+.restaurant-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 120px 120px;
+  grid-gap: 14px;
+  grid-template-areas:
+    "big small1"
+    "big small2"
+    "wide wide";
+}
+.bento-item {
+  background: #202223;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bento-item-lg {
+  grid-area: big;
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+}
+.bento-item-wide {
+  grid-area: wide;
+  grid-column: 1 / span 2;
+  grid-row: 3 / 4;
+}
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive for mobile */
+@media (max-width: 991px) {
+  .restaurant-section .row > div {
+    margin-bottom: 2rem;
+  }
+  .restaurant-bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .restaurant-bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 120px);
+    grid-template-areas: unset;
+  }
+  .bento-item-lg,
+  .bento-item-wide {
+    grid-column: unset;
+    grid-row: unset;
   }
 }
 </style>
