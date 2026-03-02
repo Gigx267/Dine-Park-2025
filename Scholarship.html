@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renewed Hope Culinary Scholarship — Apply Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+    .header {
+      background: linear-gradient(to right, #00332b, #004d40);
+      padding: 60px 40px 40px;
+      text-align: center;
+      position: relative;
+    }
+    .header h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #ffca28;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .header p { font-size: 1.1rem; opacity: 0.95; }
+    .form-content {
+      padding: 40px;
+      background: white;
+      color: #222;
+    }
+    h2 {
+      color: #004d40;
+      font-size: 1.5rem;
+      margin: 2rem 0 1.2rem;
+      border-bottom: 2px solid #ffca28;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .form-group {
+      margin-bottom: 24px;
+      position: relative;
+    }
+    label {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      color: #777;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: all 0.25s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00695c;
+      box-shadow: 0 0 0 3px rgba(0,105,92,0.15);
+      background: white;
+    }
+    input:not(:placeholder-shown) + label,
+    input:focus + label,
+    select:not([value=""]) + label,
+    textarea:not(:placeholder-shown) + label,
+    textarea:focus + label {
+      top: -10px;
+      left: 12px;
+      font-size: 0.78rem;
+      color: #004d40;
+      background: white;
+      padding: 0 6px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .checkbox-group {
+      margin: 28px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+    }
+    button {
+      background: linear-gradient(to right, #ffca28, #ffb300);
+      color: #00332b;
+      font-size: 1.15rem;
+      font-weight: 600;
+      padding: 16px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: block;
+      margin: 40px auto 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(255,193,7,0.35);
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(255,193,7,0.5);
+      background: linear-gradient(to right, #ffc107, #ffab00);
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .required::after { content: " *"; color: #d32f2f; }
+    #my-form-status {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 500;
+      min-height: 24px;
+    }
+    #my-form-status.success { color: #2e7d32; }
+    #my-form-status.error { color: #d32f2f; }
+    .footer-note {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #eee;
+    }
+    @media (max-width: 600px) {
+      .form-content { padding: 28px; }
+      .header { padding: 50px 24px 32px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Renewed Hope Culinary Scholarship</h1>
+      <p>North Central Development Commission • In Partnership with Dine & Pack Culinary Centre</p>
+      <p style="margin-top:12px; font-weight:500;">Empowering the Next Generation of Culinary Entrepreneurs</p>
+    </div>
+
+    <div class="form-content">
+
+      <!-- Your Formspree structure with all fields added -->
+      <form id="my-form" action="https://formspree.io/f/mykdqgvj" method="POST">
+
+        <h2>Personal Information</h2>
+        
+        <div class="form-group">
+          <input type="text" name="Full Name" id="fullName" placeholder=" " required>
+          <label for="fullName" class="required">Full Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" name="Phone Number" id="phone" placeholder=" " required>
+          <label for="phone" class="required">Phone Number (WhatsApp preferred)</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="Email" id="email" placeholder=" " required>
+          <label for="email" class="required">Email Address</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="Residential Address" id="address" placeholder=" " required></textarea>
+          <label for="address" class="required">Residential Address</label>
+        </div>
+
+        <div class="form-group">
+          <select name="State of Origin" id="stateOrigin" required>
+            <option value=""></option>
+            <option value="Abia">Abia</option>
+<option value="Adamawa">Adamawa</option>
+<option value="Akwa Ibom">Akwa Ibom</option>
+<option value="Anambra">Anambra</option>
+<option value="Bauchi">Bauchi</option>
+<option value="Bayelsa">Bayelsa</option>
+<option value="Benue">Benue</option>
+<option value="Borno">Borno</option>
+<option value="Cross River">Cross River</option>
+<option value="Delta">Delta</option>
+<option value="Ebonyi">Ebonyi</option>
+<option value="Edo">Edo</option>
+<option value="Ekiti">Ekiti</option>
+<option value="Enugu">Enugu</option>
+<option value="FCT">Federal Capital Territory (Abuja)</option>
+<option value="Gombe">Gombe</option>
+<option value="Imo">Imo</option>
+<option value="Jigawa">Jigawa</option>
+<option value="Kaduna">Kaduna</option>
+<option value="Kano">Kano</option>
+<option value="Katsina">Katsina</option>
+<option value="Kebbi">Kebbi</option>
+<option value="Kogi">Kogi</option>
+<option value="Kwara">Kwara</option>
+<option value="Lagos">Lagos</option>
+<option value="Nasarawa">Nasarawa</option>
+<option value="Niger">Niger</option>
+<option value="Ogun">Oun</option>
+<option value="Ondo">Ondo</option>
+<option value="Osun">Osun</option>
+<option value="Oyo">Oyo</option>
+<option value="Plateau">Plateau</option>
+<option value="Rivers">Rivers</option>
+<option value="Sokoto">Sokoto</option>
+<option value="Taraba">Taraba</option>
+<option value="Yobe">Yobe</option>
+<option value="Zamfara">Zamfara</option>
+            <option value="FCT">Federal Capital Territory (Abuja)</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="stateOrigin" class="required">State of Origin</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="Other State" id="otherState" placeholder=" ">
+          <label for="otherState">If Other, please specify</label>
+        </div>
+
+        <div class="form-group">
+          <input type="number" name="Age" id="age" min="16" placeholder=" " required>
+          <label for="age" class="required">Age</label>
+        </div>
+
+        <h2>Education & Background</h2>
+
+        <div class="form-group">
+          <select name="Highest Education Level" id="education" required>
+            <option value=""></option>
+            <option value="SSCE">SSCE / WAEC / NECO</option>
+            <option value="ND">National Diploma</option>
+            <option value="HND">Higher National Diploma</option>
+            <option value="BSc">Bachelor's Degree</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="education" class="required">Highest Level of Education</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="Prior Culinary Experience" id="cookingExperience" placeholder=" "></textarea>
+          <label for="cookingExperience">Prior Cooking / Culinary Experience (briefly describe)</label>
+        </div>
+
+        <h2>Your Motivation</h2>
+
+        <div class="form-group">
+          <textarea name="Why are you applying" id="whyApply" placeholder=" " required></textarea>
+          <label for="whyApply" class="required">Why are you applying for this scholarship?</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="What will you use the training for" id="usingTrainingFor" placeholder=" " required></textarea>
+          <label for="usingTrainingFor" class="required">What do you plan to use this training for?</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="How did you hear about it" id="howHeard" placeholder=" " required></textarea>
+          <label for="howHeard" class="required">How did you hear about this program?</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="Why you deserve this scholarship" id="whyDeserve" placeholder=" " required></textarea>
+          <label for="whyDeserve" class="required">Why do you deserve to be considered?</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="Future career goals" id="futurePlans" placeholder=" "></textarea>
+          <label for="futurePlans">Your future goals in culinary/food entrepreneurship</label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="agree" name="Agreement" required>
+          <label for="agree">I confirm that all information provided is true and accurate. I understand this is an application and not a guarantee of selection.</label>
+        </div>
+
+        <button id="my-form-button" type="submit">Submit My Application</button>
+        <p id="my-form-status"></p>
+
+      </form>
+
+    </div>
+
+    <div class="footer-note">
+      North Central Development Commission • Renewed Hope Culinary Scholarship Scheme<br>
+      In collaboration with Dine & Pack Culinary Training Centre • Applications via Formspree
+    </div>
+  </div>
+
+  <!-- Your custom Formspree script (placed at end of body) -->
+  <script>
+    var form = document.getElementById("my-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var button = document.getElementById("my-form-button");
+      button.disabled = true;
+      status.innerHTML = "Submitting...";
+
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission! We'll review your application soon.";
+          status.className = "success";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form.";
+            }
+            status.className = "error";
+          });
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form.";
+        status.className = "error";
+      }).finally(() => {
+        button.disabled = false;
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
+  </script>
+
+</body>
+</html>
