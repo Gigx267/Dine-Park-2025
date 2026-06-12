@@ -49,7 +49,7 @@
       letter-spacing: -0.03em;
     }
 
-    /* Navbar */
+    /* Navbar Quick Adjustments */
     .custom-nav {
       background: transparent;
       transition: var(--transition-fluid);
@@ -57,7 +57,7 @@
       z-index: 1050;
     }
     .custom-nav.scrolled {
-      background: rgba(250, 246, 240, 0.85);
+      background: rgba(250, 246, 240, 0.95);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       padding: 16px 0;
@@ -76,7 +76,7 @@
       color: var(--deep-soil);
     }
     .nav-link {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.9);
       font-weight: 600;
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -88,12 +88,14 @@
       color: rgba(20, 14, 10, 0.7);
     }
     .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
-      color: var(--terracotta);
+      color: var(--terracotta) !important;
     }
+    
+    /* Clean CSS Custom Hamburgers */
     .navbar-toggler {
       padding: 0;
-      width: 30px;
-      height: 20px;
+      width: 24px;
+      height: 18px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -109,18 +111,20 @@
     .custom-nav.scrolled .navbar-toggler span {
       background-color: var(--deep-soil);
     }
+
     @media (max-width: 991.98px) {
       .navbar-collapse {
         background: rgba(20, 14, 10, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-radius: 28px;
+        border-radius: 24px;
         padding: 2rem;
         margin-top: 1rem;
       }
-      .nav-link {
-        color: var(--white-pure) !important;
+      .navbar-collapse .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
         border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 12px 0;
       }
     }
 
@@ -179,19 +183,20 @@
       border-radius: 50px;
     }
 
-    /* Hero */
+    /* Hero Layout Optimization */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(180deg, rgba(20,14,10,0.75) 0%, rgba(20,14,10,0.4) 60%, var(--cream) 100%),
+      background: linear-gradient(180deg, rgba(20,14,10,0.8) 0%, rgba(20,14,10,0.45) 60%, var(--cream) 100%),
                   url('https://www.dineandpack.com.ng/assets/img/p%20(21).JPG') center/cover no-repeat;
       display: flex;
       align-items: center;
       color: var(--white-pure);
       padding-top: 140px;
+      padding-bottom: 60px;
     }
     .hero-title {
-      font-size: calc(2.2rem + 3.8vw);
-      line-height: 1.05;
+      font-size: calc(2.4rem + 3.5vw);
+      line-height: 1.1;
       color: var(--white-pure);
       margin-bottom: 1.5rem;
     }
@@ -202,29 +207,28 @@
     }
 
     .section-padding {
-      padding: 140px 0;
+      padding: 120px 0;
     }
     @media (max-width: 768px) {
-      .section-padding { padding: 90px 0; }
+      .section-padding { padding: 80px 0; }
     }
 
-    /* Scholarship Form Container — premium integration */
+    /* Premium Scholarship Integration Elements */
     .scholarship-form-wrapper {
       background: var(--white-pure);
-      border-radius: 48px;
-      box-shadow: 0 40px 70px rgba(20, 14, 10, 0.08);
+      border-radius: 32px;
+      box-shadow: 0 40px 70px rgba(20, 14, 10, 0.06);
       transition: var(--transition-fluid);
       overflow: hidden;
       border: 1px solid rgba(20, 14, 10, 0.04);
     }
 
-    /* Custom form styling to match scholarship aesthetic but unified with brand */
     .scholarship-form-wrapper label {
       font-weight: 600;
       font-size: 0.8rem;
       letter-spacing: 0.03em;
       color: var(--deep-soil);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: block;
     }
     .scholarship-form-wrapper input,
@@ -232,30 +236,32 @@
     .scholarship-form-wrapper textarea {
       width: 100%;
       padding: 14px 18px;
-      border-radius: 20px;
+      border-radius: 12px;
       border: 1px solid #e2e0db;
       background: #fefcf9;
-      transition: 0.25s ease;
+      transition: all 0.3s ease;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--deep-soil);
     }
     .scholarship-form-wrapper input:focus,
     .scholarship-form-wrapper select:focus,
     .scholarship-form-wrapper textarea:focus {
       border-color: var(--terracotta);
       outline: none;
-      box-shadow: 0 0 0 3px rgba(224,83,60,0.1);
+      box-shadow: 0 0 0 4px rgba(224, 83, 60, 0.1);
       background: white;
     }
     .scholarship-form-wrapper .checkbox-custom {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      margin: 20px 0;
+      margin: 24px 0;
     }
     .scholarship-form-wrapper .checkbox-custom input {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       margin-top: 3px;
+      flex-shrink: 0;
     }
     .required-star::after {
       content: " *";
@@ -263,7 +269,7 @@
       font-weight: bold;
     }
     .small-note {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: #6b5a4e;
       margin-top: 6px;
     }
@@ -276,10 +282,10 @@
     .form-status.error { color: #c0392b; }
 
     .interactive-feature-card {
-      padding: 1.5rem;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(20, 14, 10, 0.02);
+      padding: 1.25rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(20, 14, 10, 0.04);
       transition: var(--transition-fluid);
       display: flex;
       align-items: center;
@@ -287,19 +293,19 @@
     }
     .interactive-feature-card:hover {
       background: var(--white-pure);
-      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.04);
+      box-shadow: 0 15px 30px rgba(20, 14, 10, 0.04);
       transform: translateY(-3px);
     }
     .interactive-feature-card i {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--terracotta);
       background: rgba(224, 83, 60, 0.08);
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
+      border-radius: 10px;
       transition: var(--transition-fluid);
     }
     .interactive-feature-card:hover i {
@@ -310,17 +316,16 @@
     .dark-bento-section {
       background-color: var(--deep-soil);
       color: var(--white-pure);
-      border-radius: 50px;
-      margin: 0 20px;
-      padding: 120px 40px;
+      border-radius: 40px;
+      padding: 100px 40px;
     }
     @media (max-width: 768px) {
-      .dark-bento-section { padding: 80px 20px; margin: 0 10px; }
+      .dark-bento-section { padding: 60px 20px; }
     }
 
     footer {
       background: var(--white-pure);
-      padding: 80px 0 40px 0;
+      padding: 60px 0 40px 0;
       border-top: 1px solid var(--border-thin);
     }
   </style>
@@ -331,22 +336,21 @@
   <nav class="navbar navbar-expand-lg fixed-top custom-nav">
     <div class="container">
       <a class="brand" href="#">Dine & Pack</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
         <span></span>
         <span></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-center gap-lg-4 gap-3">
-           
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-2">
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
           <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="Apply.html">Scholarship </a></li>
-              <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
-     
+          <li class="nav-item"><a class="nav-link" href="Apply.html">Scholarship</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
-          <li class="nav-item ms-lg-2"><a href="Apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a href="Apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
         </ul>
       </div>
     </div>
@@ -359,8 +363,8 @@
         <div class="col-xl-9 col-lg-11" data-aos="fade-up" data-aos-duration="1200">
           <span class="sub-badge" style="background: rgba(255,255,255,0.1); color: var(--white-pure);">Renewed Hope Culinary Scholarship</span>
           <h1 class="hero-title">Rooted in Cooking.<br>Defined by <span>Tradition</span>.</h1>
-          <p class="fs-5 opacity-90 mb-5 text-white-50" style="max-width: 680px;">
-            Fully funded culinary training at Dine & Pack in partnership with North Central Development Commission. Turn your passion into profession — applications open now.
+          <p class="fs-5 mb-5 text-white-50" style="max-width: 680px;">
+             Turn your passion into professional excellence — fully funded scholarship positions open now.
           </p>
           <div class="d-flex gap-3 flex-wrap">
             <a href="#scholarship-app" class="btn-modern-primary">Apply for Scholarship</a>
@@ -371,15 +375,15 @@
     </div>
   </section>
 
-  <!-- About Section shortened but kept for coherence -->
+  <!-- About Section -->
   <section id="about" class="section-padding">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6" data-aos="fade-right">
           <div class="image-frame shadow-lg position-relative rounded-4 overflow-hidden">
-            <img src="https://www.dineandpack.com.ng/assets/img/p%20(9).jpg" class="img-fluid w-100" style="object-fit: cover; min-height: 460px;" alt="Culinary workshop">
-            <div class="floating-context-badge" style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); padding: 12px 24px; border-radius: 40px;">
-              <span class="small fw-bold"><i class="fa-regular fa-star me-1 text-terracotta"></i> Partnership with NCDC</span>
+            <img src="https://www.dineandpack.com.ng/assets/img/p%20(5).jpg" class="img-fluid w-100" style="object-fit: cover; min-height: 460px;" alt="Culinary training workshop">
+            <div class="floating-context-badge" style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); padding: 12px 24px; border-radius: 40px;">
+              <span class="small fw-bold"><i class="fa-regular fa-star me-1 text-terracotta"></i> In Association with NCDC</span>
             </div>
           </div>
         </div>
@@ -387,12 +391,12 @@
           <span class="sub-badge">Renewed Hope Initiative</span>
           <h2 class="display-5 fw-bold mb-4">Transform Your Future in Culinary Arts</h2>
           <div class="mb-4">
-            <p class="brand-blockquote ps-4 fst-italic border-start border-3 border-terracotta mb-0">“A fully sponsored scholarship to unlock your culinary potential — no tuition fees, just dedication.”</p>
+            <p class="ps-4 fst-italic border-start border-3 border-terracotta mb-0 text-muted" style="font-size: 1.1rem;">“A fully sponsored technical scholarship to unlock talent pipelines across Abuja and the North Central zone.”</p>
           </div>
-          <p class="mb-4">Dine & Pack, in collaboration with the North Central Development Commission, presents the Renewed Hope Culinary Scholarship. Selected candidates receive world-class training at our Abuja culinary centre, mentorship from master chefs, and entrepreneurial pathways.</p>
+          <p class="mb-4 text-secondary">Dine & Pack, in strategic alignment with the North Central Development Commission, presents the Renewed Hope Culinary Scholarship. Selected candidates receive institutional training at our modern Abuja training facility, industrial chef mentorship, and direct entrepreneurship support channels.</p>
           <div class="row g-3">
-            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-hand-holding-heart"></i><span class="small fw-bold">Fully Funded</span></div></div>
-            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-kitchen-set"></i><span class="small fw-bold">Professional Gear Included</span></div></div>
+            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-hand-holding-heart"></i><span class="small fw-bold">100% Tuition Funded</span></div></div>
+            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-kitchen-set"></i><span class="small fw-bold">Professional Kits Provided</span></div></div>
           </div>
         </div>
       </div>
@@ -400,147 +404,166 @@
   </section>
 
   <!-- Program Bento Grid -->
-  <section id="programs" class="section-padding" style="background-color: var(--cream-dark); border-radius: 50px 50px 0 0;">
+  <section id="programs" class="section-padding" style="background-color: var(--cream-dark); border-radius: 40px 40px 0 0;">
     <div class="container">
       <div class="mb-5 pb-2" data-aos="fade-up">
         <span class="sub-badge">Scholarship Tracks</span>
-        <h2 class="display-5 fw-bold mt-2">Signature Paths Covered</h2>
+        <h2 class="display-5 fw-bold mt-2">Signature Professional Paths</h2>
       </div>
       <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
-            <h4 class="fw-bold mb-3">Grand Diploma in Culinary Arts</h4>
-            <p class="text-secondary small">Classical techniques, global gastronomy, kitchen management — 6 months intensive.</p>
-            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-white p-4 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="fw-bold mb-3">Grand Diploma in Culinary Arts</h4>
+              <p class="text-secondary small">Classical European foundations, global culinary syntax, commercial kitchen optimization strategies — 6 months intensive deployment.</p>
+            </div>
+            <div class="mt-4"><span class="badge bg-danger text-white px-3 py-2 rounded-pill" style="background-color: var(--terracotta) !important;">Full Sponsorship</span></div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
-            <h4 class="fw-bold mb-3">Patisserie & Baking Mastery</h4>
-            <p class="text-secondary small">Pastry science, chocolate work, artisan bread — 3 months focused lab.</p>
-            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-white p-4 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="fw-bold mb-3">Patisserie & Baking Mastery</h4>
+              <p class="text-secondary small">Viennoiserie development, sugar chemistry, chocolate tempering, and structural baking mechanics — 3 months lab deployment.</p>
+            </div>
+            <div class="mt-4"><span class="badge bg-danger text-white px-3 py-2 rounded-pill" style="background-color: var(--terracotta) !important;">Full Sponsorship</span></div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
-            <h4 class="fw-bold mb-3">African Fusion & Modern Nigerian</h4>
-            <p class="text-secondary small">Indigenous ingredients, contemporary plating, heritage revival — 2 months.</p>
-            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+        <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-white p-4 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="fw-bold mb-3">African Fusion & Modern Nigerian</h4>
+              <p class="text-secondary small">Deconstruction of regional ingredients, high-concept plating formats, and functional preservation techniques — 2 months focus.</p>
+            </div>
+            <div class="mt-4"><span class="badge bg-danger text-white px-3 py-2 rounded-pill" style="background-color: var(--terracotta) !important;">Full Sponsorship</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN SCHOLARSHIP APPLICATION FORM (Renewed Hope Culinary Scholarship) with existing formspree + all fields integrated -->
+  <!-- APPLICATION FORM SECTION -->
   <section id="scholarship-app" class="section-padding">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-10" data-aos="fade-up">
+        <div class="col-xl-10 col-lg-11" data-aos="fade-up">
           <div class="scholarship-form-wrapper p-4 p-md-5">
-            <div class="text-center mb-4">
-              <span class="sub-badge">Limited Slots — Apply Now</span>
-              <h2 class="display-6 fw-bold mt-2">Renewed Hope Culinary Scholarship Application</h2>
-              <p class="text-secondary">North Central Development Commission x Dine & Pack Culinary Centre — Abuja residents or those able to commute. Fully funded training. <strong>Deadline: rolling admissions</strong></p>
+            <div class="text-center mb-5">
+              <span class="sub-badge">Official Intake Portal</span>
+              <h2 class="display-6 fw-bold mt-2">Registration Form</h2>
+              <p class="text-secondary mx-auto mb-0" style="max-width: 750px;">
+                North Central Development Commission Partnership Deployment Portal. Review your structural entries closely prior to processing.
+              </p>
             </div>
 
-            <!-- same formspree endpoint: https://formspree.io/f/mreanygq -->
             <form id="scholarship-form" action="https://formspree.io/f/mreanygq" method="POST">
-              <!-- Personal Information group -->
-              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Personal Information</h4>
-              <div class="row g-3 mb-4">
-                <div class="col-md-12">
-                  <label class="required-star">Full Name</label>
-                  <input type="text" name="Full Name" placeholder="e.g., Adeola O. Raji" required>
+              <h4 class="fw-bold mb-4 pb-2 border-bottom" style="color: var(--deep-soil); font-size: 1.2rem;">1. Personal Records</h4>
+              <div class="row g-3 mb-5">
+                <div class="col-12">
+                  <label for="fullName" class="required-star">Full Legal Name</label>
+                  <input type="text" id="fullName" name="Full Name" placeholder="First Name Middle Initial Surname" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="required-star">Phone Number (WhatsApp preferred)</label>
-                  <input type="tel" name="Phone Number" placeholder="080XXXXXX" required>
+                  <label for="phoneNumber" class="required-star">Primary Contact Number (WhatsApp Active)</label>
+                  <input type="tel" id="phoneNumber" name="Phone Number" placeholder="e.g., 08034567890" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="required-star">Email Address</label>
-                  <input type="email" name="Email" placeholder="hello@example.com" required>
+                  <label for="emailAddress" class="required-star">Active Email Address</label>
+                  <input type="email" id="emailAddress" name="Email" placeholder="e.g., identity@domain.com" required>
                 </div>
                 <div class="col-12">
-                  <label class="required-star">Residential Address (Abuja residents only)</label>
-                  <textarea name="Residential Address" rows="2" placeholder="Enter your full address, area, landmark" required></textarea>
-                  <div class="small-note">Note: This program is held in Abuja. You must be local or able to travel.</div>
+                  <label for="residentialAddress" class="required-star">Residential Address (Abuja Domiciled)</label>
+                  <textarea id="residentialAddress" name="Residential Address" rows="2" placeholder="Full structure street location, near identifiable structural landmarks" required></textarea>
+                  <div class="small-note">Note: Practical execution occurs completely on-site in Abuja. Selected participants must sustain independent regional transport.</div>
                 </div>
                 <div class="col-md-6">
-                  <label class="required-star">State of Origin</label>
-                  <select name="State of Origin" required>
-                    <option value="" disabled selected>Select state</option>
-                    <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option>
-                    <option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT</option><option>Gombe</option>
-                    <option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option>
-                    <option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option>
-                    <option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option><option>Other</option>
+                  <label for="stateOrigin" class="required-star">State of Origin Representation</label>
+                  <select id="stateOrigin" name="State of Origin" required>
+                    <option value="" disabled selected>Select regional state mapping</option>
+                    <option value="Abia">Abia</option><option value="Adamawa">Adamawa</option><option value="Akwa Ibom">Akwa Ibom</option>
+                    <option value="Anambra">Anambra</option><option value="Bauchi">Bauchi</option><option value="Bayelsa">Bayelsa</option>
+                    <option value="Benue">Benue</option><option value="Borno">Borno</option><option value="Cross River">Cross River</option>
+                    <option value="Delta">Delta</option><option value="Ebonyi">Ebonyi</option><option value="Edo">Edo</option>
+                    <option value="Ekiti">Ekiti</option><option value="Enugu">Enugu</option><option value="FCT">FCT (Abuja)</option>
+                    <option value="Gombe">Gombe</option><option value="Imo">Imo</option><option value="Jigawa">Jigawa</option>
+                    <option value="Kaduna">Kaduna</option><option value="Kano">Kano</option><option value="Katsina">Katsina</option>
+                    <option value="Kebbi">Kebbi</option><option value="Kogi">Kogi</option><option value="Kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option><option value="Nasarawa">Nasarawa</option><option value="Niger">Niger</option>
+                    <option value="Ogun">Ogun</option><option value="Ondo">Ondo</option><option value="Osun">Osun</option>
+                    <option value="Oyo">Oyo</option><option value="Plateau">Plateau</option><option value="Rivers">Rivers</option>
+                    <option value="Sokoto">Sokoto</option><option value="Taraba">Taraba</option><option value="Yobe">Yobe</option>
+                    <option value="Zamfara">Zamfara</option><option value="Other">Other Location Context</option>
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label>If Other, please specify</label>
-                  <input type="text" name="Other State" placeholder="Specify">
+                  <label for="otherState">Alternate Regional Designation (If Other)</label>
+                  <input type="text" id="otherState" name="Other State" placeholder="State name validation data">
                 </div>
                 <div class="col-md-6">
-                  <label class="required-star">Age</label>
-                  <input type="number" name="Age" min="16" max="60" required>
+                  <label for="ageField" class="required-star">Age Range Profile</label>
+                  <input type="number" id="ageField" name="Age" min="16" max="60" placeholder="Valid institutional age" required>
                 </div>
               </div>
 
-              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Education & Background</h4>
-              <div class="row g-3 mb-4">
-                <div class="col-md-12">
-                  <label class="required-star">Highest Level of Education</label>
-                  <select name="Highest Education Level" required>
-                    <option value="">Select</option><option>SSCE / WAEC / NECO</option><option>National Diploma</option><option>Higher National Diploma</option><option>Bachelor's Degree</option><option>Other</option>
+              <h4 class="fw-bold mb-4 pb-2 border-bottom" style="color: var(--deep-soil); font-size: 1.2rem;">2. Educational Context & Background</h4>
+              <div class="row g-3 mb-5">
+                <div class="col-12">
+                  <label for="educationLevel" class="required-star">Highest Academic Level Achieved</label>
+                  <select id="educationLevel" name="Highest Education Level" required>
+                    <option value="" disabled selected>Select level threshold</option>
+                    <option value="SSCE / WAEC / NECO">SSCE / WAEC / NECO Secondary Portfolio</option>
+                    <option value="National Diploma">National Diploma (ND / OND)</option>
+                    <option value="Higher National Diploma">Higher National Diploma (HND)</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree Graduate</option>
+                    <option value="Other">Other Profile Context</option>
                   </select>
                 </div>
                 <div class="col-12">
-                  <label>Prior Cooking / Culinary Experience (briefly describe)</label>
-                  <textarea name="Prior Culinary Experience" rows="2" placeholder="If none, write 'No formal experience but passion for cooking'"></textarea>
+                  <label for="priorExperience">Existing Commercial Kitchen or Local Cooking Exposure</label>
+                  <textarea id="priorExperience" name="Prior Culinary Experience" rows="2" placeholder="Detail any domestic or informal kitchen operations executed. Write 'No formal entry profile' if entry tier."></textarea>
                 </div>
               </div>
 
-              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Your Motivation (Required)</h4>
+              <h4 class="fw-bold mb-4 pb-2 border-bottom" style="color: var(--deep-soil); font-size: 1.2rem;">3. Evaluation & Intention Statements</h4>
               <div class="row g-3 mb-4">
-                <div class="col-md-12">
-                  <label class="required-star">Why are you applying for this scholarship?</label>
-                  <textarea name="Why are you applying" rows="3" required></textarea>
+                <div class="col-12">
+                  <label for="whyApplying" class="required-star">Core Intent Statement: Why are you requesting allocation under this specific program?</label>
+                  <textarea id="whyApplying" name="Why are you applying" rows="3" required placeholder="Outline explicit lifestyle, financial, or directional metrics driving this submission."></textarea>
                 </div>
-                <div class="col-md-12">
-                  <label class="required-star">What do you plan to use this training for?</label>
-                  <textarea name="What will you use the training for" rows="3" required></textarea>
+                <div class="col-12">
+                  <label for="trainingUse" class="required-star">Application Strategy: How do you plan to employ this structural skill transfer?</label>
+                  <textarea id="trainingUse" name="What will you use the training for" rows="3" required placeholder="Detail whether targeting immediate workforce deployment or micro-enterprise asset formation."></textarea>
                 </div>
-                <div class="col-md-12">
-                  <label class="required-star">How did you hear about this program?</label>
-                  <textarea name="How did you hear about it" rows="2" required></textarea>
+                <div class="col-12">
+                  <label for="referralSource" class="required-star">Program Discovery: Through what structural communication channel did you discover this intake?</label>
+                  <textarea id="referralSource" name="How did you hear about it" rows="2" required placeholder="e.g., NCDC publication, Digital Channels, Local Community representation."></textarea>
                 </div>
-                <div class="col-md-12">
-                  <label class="required-star">Why do you deserve to be considered?</label>
-                  <textarea name="Why you deserve this scholarship" rows="3" required></textarea>
+                <div class="col-12">
+                  <label for="deserveConsideration" class="required-star">Selection Defense: Why should the evaluation panel prioritize your deployment file?</label>
+                  <textarea id="deserveConsideration" name="Why you deserve this scholarship" rows="3" required placeholder="Detail personal drive vectors, community development potential, or output consistency metrics."></textarea>
                 </div>
-                <div class="col-md-12">
-                  <label>Your future goals in culinary/food entrepreneurship</label>
-                  <textarea name="Future career goals" rows="2" placeholder="e.g., open a restaurant, catering business, etc."></textarea>
+                <div class="col-12">
+                  <label for="futureGoals">Long-term Asset Objectives</label>
+                  <textarea id="futureGoals" name="Future career goals" rows="2" placeholder="e.g., independent catering infrastructure, regional menu development, corporate kitchen management."></textarea>
                 </div>
               </div>
 
               <div class="checkbox-custom">
-                <input type="checkbox" id="agreeCheckbox" name="Agreement" required>
-                <label for="agreeCheckbox" class="small">I confirm that all information provided is true and accurate. I understand this is an application and not a guarantee of selection.</label>
+                <input type="checkbox" id="agreeCheckbox" name="Agreement" value="Accepted Legal Profile" required>
+                <label for="agreeCheckbox" class="small text-muted">I attest that all structural records filled represent valid facts. I understand that this execution pathway constitutes an evaluation dynamic and guarantees no automatic operational placement.</label>
               </div>
 
               <div class="text-center mt-4">
-                <button type="submit" id="formSubmitBtn" class="btn-modern-primary w-100 w-md-auto" style="padding: 14px 48px;">Submit My Application</button>
+                <button type="submit" id="formSubmitBtn" class="btn-modern-primary d-block w-100 btn-lg py-3" style="border-radius: 12px;">Submit Application Entry Portfolio</button>
                 <div id="my-form-status" class="form-status mt-3"></div>
               </div>
             </form>
 
-            <!-- WhatsApp support cue (mirroring the secondary message but native to form) -->
-            <div class="mt-5 pt-3 text-center border-top">
-              <div class="culinary-section d-inline-block w-100" style="max-width: 100%; background: #f6f3ef; border-radius: 32px; padding: 18px;">
-                <p class="mb-2 fw-semibold">📞 Have questions about the scholarship? Reach out to our support team</p>
-                <a href="https://wa.me/2348087630000" class="whatsapp-btn" style="background:#25D366; display:inline-block; padding: 12px 30px; border-radius: 40px; color:white; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp</a>
+            <!-- Support Module Integration -->
+            <div class="mt-5 pt-4 text-center border-top">
+              <div style="background: #f6f3ef; border-radius: 16px; padding: 24px;">
+                <p class="mb-3 fw-semibold text-dark"><i class="fas fa-circle-info me-2 text-muted"></i>Require Operational Clarification Regarding the Selection Intake?</p>
+                <a href="https://wa.me/2348087630000" target="_blank" rel="noopener" class="d-inline-flex align-items-center justify-content-center px-4 py-2.5" style="background:#25D366; border-radius: 8px; color:white; text-decoration:none; font-weight:700; font-size: 0.85rem;"><i class="fab fa-whatsapp me-2 fs-5"></i>Connect with Support Staff</a>
               </div>
             </div>
           </div>
@@ -550,13 +573,13 @@
   </section>
 
   <!-- CTA Banner -->
-  <section id="cta-banner" class="my-5">
+  <section id="cta-banner" class="mb-5 px-3">
     <div class="container">
       <div class="dark-bento-section text-center" data-aos="zoom-in">
-        <span class="sub-badge" style="background: rgba(255,255,255,0.06); color: var(--white-pure);">Limited Cohort</span>
+        <span class="sub-badge" style="background: rgba(255,255,255,0.06); color: var(--white-pure);">Limited Cohort Space</span>
         <h2 class="display-4 fw-bold text-white mt-3 mb-4">Design the Future of Taste</h2>
-        <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 650px;">Culinary entrepreneurs turn passion into profit — this scholarship is your launchpad. Apply before slots fill.</p>
-        <a href="#scholarship-app" class="btn-modern-primary">Apply for Scholarship →</a>
+        <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 650px;">Culinary innovators turn localized concepts into regional enterprises — secure your training track before evaluations close.</p>
+        <a href="#scholarship-app" class="btn-modern-primary">Initiate File Application →</a>
       </div>
     </div>
   </section>
@@ -564,7 +587,7 @@
   <!-- Footer -->
   <footer>
     <div class="container text-center text-secondary small">
-      <p class="mb-3 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. In Partnership with North Central Development Commission.</p>
+      <p class="mb-3 fw-medium">&copy; 2026 Dine & Pack — Culinary Forge, Abuja. In Strategic Framework with the North Central Development Commission.</p>
       <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center opacity-75">
         <span><i class="fas fa-map-marker-alt me-2" style="color: var(--terracotta);"></i>ORIENTAL GARDEN, 14B Accra Street, Wuse Zone 5, Abuja</span>
         <span class="d-none d-md-inline">|</span>
@@ -576,52 +599,60 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 50 });
-    window.addEventListener('scroll', function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS with defensive options
+      AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 30 });
+      
       const navbar = document.querySelector('.custom-nav');
-      if (window.scrollY > 50) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    });
-
-    // Formspree handler exactly as required (same as original scholarship form with all fields)
-    const form = document.getElementById("scholarship-form");
-    const statusDiv = document.getElementById("my-form-status");
-    const submitBtn = document.getElementById("formSubmitBtn");
-
-    async function handleSubmit(event) {
-      event.preventDefault();
-      statusDiv.innerHTML = "Submitting application...";
-      statusDiv.className = "form-status";
-      submitBtn.disabled = true;
-
-      const data = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          statusDiv.innerHTML = "✅ Thanks for your submission! We'll review your application soon.";
-          statusDiv.className = "form-status success";
-          form.reset();
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
         } else {
-          const responseData = await response.json();
-          if (responseData.errors) {
-            statusDiv.innerHTML = responseData.errors.map(e => e.message).join(", ");
-          } else {
-            statusDiv.innerHTML = "❌ Oops! There was a problem submitting your form.";
-          }
-          statusDiv.className = "form-status error";
+          navbar.classList.remove('scrolled');
         }
-      } catch (error) {
-        statusDiv.innerHTML = "❌ Network error. Please try again.";
-        statusDiv.className = "form-status error";
-      } finally {
-        submitBtn.disabled = false;
+      });
+
+      // Formspree API Implementation
+      const form = document.getElementById("scholarship-form");
+      const statusDiv = document.getElementById("my-form-status");
+      const submitBtn = document.getElementById("formSubmitBtn");
+
+      if (form) {
+        form.addEventListener("submit", async function(event) {
+          event.preventDefault();
+          statusDiv.innerHTML = "Processing entry verification metrics...";
+          statusDiv.className = "form-status text-dark";
+          submitBtn.disabled = true;
+
+          const data = new FormData(form);
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+              statusDiv.innerHTML = "✅ Verification complete. Your data portfolio has been securely filed for institutional review.";
+              statusDiv.className = "form-status success fw-bold p-3 bg-light rounded mt-3";
+              form.reset();
+            } else {
+              const responseData = await response.json();
+              if (responseData.errors) {
+                statusDiv.innerHTML = "❌ " + responseData.errors.map(e => e.message).join(", ");
+              } else {
+                statusDiv.innerHTML = "❌ Outgoing transmission processing error. Verify inputs and retry.";
+              }
+              statusDiv.className = "form-status error fw-bold mt-3";
+            }
+          } catch (error) {
+            statusDiv.innerHTML = "❌ Network latency detected. Check operational connectivity profiles.";
+            statusDiv.className = "form-status error fw-bold mt-3";
+          } finally {
+            submitBtn.disabled = false;
+          }
+        });
       }
-    }
-    form.addEventListener("submit", handleSubmit);
+    });
   </script>
 </body>
 </html>
