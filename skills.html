@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Skills & Careers — Dine & Pack | Master the Culinary Arts, Abuja</title>
+  <meta name="description" content="Beyond cooking: discover executive chef, pastry virtuoso, culinary entrepreneur, food stylist, caterer & more. Turn your passion into a thriving career at Dine & Pack Abuja.">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Ultra-Modern Minimal Navbar */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .nav-link.active {
+      color: var(--terracotta) !important;
+    }
+
+    /* Minimal Toggler */
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+
+    /* Contemporary Buttons */
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 14px 38px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      color: var(--white-pure);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+    .btn-modern-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white-pure);
+      padding: 14px 38px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-modern-outline:hover {
+      background: var(--white-pure);
+      color: var(--deep-soil);
+      border-color: var(--white-pure);
+    }
+
+    /* Typography Utilities */
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* Immersive Hero */
+    .skills-hero {
+      min-height: 75vh;
+      background: linear-gradient(180deg, rgba(20,14,10,0.85) 0%, rgba(20,14,10,0.4) 50%, var(--cream) 100%),
+                  url('https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+    }
+    .hero-title {
+      font-size: calc(2rem + 3.5vw);
+      line-height: 1.05;
+      color: var(--white-pure);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span {
+      color: var(--terracotta);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .section-padding {
+      padding: 140px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 90px 0; }
+    }
+
+    /* Modern Bento Grid Structure & Interaction */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 11fr);
+      gap: 30px;
+    }
+    @media (max-width: 991px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .bento-grid { grid-template-columns: 1fr; }
+    }
+
+    .career-bento-card {
+      background: var(--white-pure);
+      border-radius: 32px;
+      padding: 2.5rem;
+      transition: var(--transition-fluid);
+      border: 1px solid var(--border-thin);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .career-bento-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at top right, rgba(224, 83, 60, 0.05), transparent 60%);
+      opacity: 0;
+      transition: var(--transition-fluid);
+    }
+    .career-bento-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 40px 80px rgba(20, 14, 10, 0.06);
+      border-color: rgba(224, 83, 60, 0.15);
+    }
+    .career-bento-card:hover::before {
+      opacity: 1;
+    }
+    
+    .card-top {
+      position: relative;
+      z-index: 2;
+    }
+    .career-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      margin-bottom: 2rem;
+      transition: var(--transition-fluid);
+    }
+    .career-bento-card:hover .career-icon-wrap {
+      background: var(--terracotta);
+      color: var(--white-pure);
+    }
+    .badge-pill-modern {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--clay-muted);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .role-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    /* Asymmetric Dynamic Cards Section */
+    .dark-bento-section {
+      background-color: var(--deep-soil);
+      color: var(--white-pure);
+      border-radius: 50px;
+      margin: 0 20px;
+      padding: 100px 60px;
+    }
+    @media (max-width: 768px) {
+      .dark-bento-section { padding: 60px 20px; margin: 0 10px; }
+    }
+    .dark-bento-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 32px;
+      padding: 2.5rem;
+      height: 100%;
+      transition: var(--transition-fluid);
+    }
+    .dark-bento-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-5px);
+      border-color: var(--terracotta);
+    }
+
+    /* Micro-interactions info list */
+    .interactive-list-item {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(20, 14, 10, 0.02);
+      transition: var(--transition-fluid);
+    }
+    .interactive-list-item:hover {
+      background: var(--white-pure);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.04);
+      transform: translateX(5px);
+    }
+
+    /* Image Overlap Layout */
+    .image-frame {
+      position: relative;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+    .image-frame img {
+      transition: transform 1s ease;
+    }
+    .image-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Premium Minimalistic Footer */
+    footer {
+      background: var(--white-pure);
+      padding: 80px 0 40px 0;
+      border-top: 1px solid var(--border-thin);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Modern Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+  <div class="container">
+    <a class="brand" href="#">Dine & Pack</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="apply.html">Apply</a></li>
+        <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Enroll 2026</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="skills-hero">
+  <div class="container">
+    <div class="row" data-aos="fade-up" data-aos-duration="1200">
+      <div class="col-xl-9 col-lg-11">
+        <span class="sub-badge">— Mastery of the Culinary World</span>
+        <h1 class="hero-title">Beyond the stove:<br> <span>craft a limitless career.</span></h1>
+        <p class="fs-5 opacity-75 mb-0 max-w-2xl text-secondary" style="max-width: 650px;">From executive chef to culinary entrepreneur, food stylist, caterer & content creator — your skills define empires. Discover the roles that turn passion into legacy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Culinary Roles Bento Grid -->
+<section class="section-padding">
+  <div class="container">
+    <div class="mb-5 pb-3" data-aos="fade-up">
+      <span class="sub-badge">The Architects of Flavor</span>
+      <h2 class="display-5 fw-bold mt-2">Culinary leadership & artistry</h2>
+      <p class="text-secondary col-lg-6 p-0">Master the kitchen hierarchy and specialized crafts that define gastronomic excellence.</p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Executive Chef -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-crown"></i></div>
+          <span class="badge-pill-modern">Leadership</span>
+          <h3 class="role-heading">Executive Chef</h3>
+          <p class="text-secondary small mb-0">The conductor-in-chief, managing the entire kitchen, budget, staff, and menu vision. They orchestrate culinary symphonies and mentor the brigade.</p>
+        </div>
+      </div>
+      
+      <!-- Sous Chef -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-hand-fist"></i></div>
+          <span class="badge-pill-modern">Second in Command</span>
+          <h3 class="role-heading">Sous Chef</h3>
+          <p class="text-secondary small mb-0">The assistant conductor, supporting the executive chef, managing stations, and ensuring smooth kitchen flow. The backbone of service.</p>
+        </div>
+      </div>
+      
+      <!-- Line Cook -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-fire-burner"></i></div>
+          <span class="badge-pill-modern">Station Master</span>
+          <h3 class="role-heading">Line Cook</h3>
+          <p class="text-secondary small mb-0">Specializing in grilling, baking, or pasta — perfecting technique and speed, keeping the rhythm of the kitchen alive with precision.</p>
+        </div>
+      </div>
+      
+      <!-- Pastry Chef -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-cake-candles"></i></div>
+          <span class="badge-pill-modern">Dessert Virtuoso</span>
+          <h3 class="role-heading">Pastry Chef</h3>
+          <p class="text-secondary small mb-0">The dessert virtuoso, crafting delicate entremets, viennoiserie, and sugar sculptures that tantalize taste buds and eyes alike.</p>
+        </div>
+      </div>
+      
+      <!-- Personal Chef -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-user-chef"></i></div>
+          <span class="badge-pill-modern">Private Culinary Artisan</span>
+          <h3 class="role-heading">Personal Chef</h3>
+          <p class="text-secondary small mb-0">Tailored menus, dietary customization, private dining — bringing restaurant-quality meals into exclusive homes and villas.</p>
+        </div>
+      </div>
+      
+      <!-- Dietary Cook -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-leaf"></i></div>
+          <span class="badge-pill-modern">Wellness Specialist</span>
+          <h3 class="role-heading">Dietary Cook</h3>
+          <p class="text-secondary small mb-0">Specializing in allergen-free, keto, plant-based & medical nutrition — blending health with culinary creativity.</p>
+        </div>
+      </div>
+      
+      <!-- Food Stylist -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-palette"></i></div>
+          <span class="badge-pill-modern">Visual Poet</span>
+          <h3 class="role-heading">Food Stylist</h3>
+          <p class="text-secondary small mb-0">Painting with ingredients and light — making food mesmerizing for photoshoots, commercials, and culinary editorials.</p>
+        </div>
+      </div>
+      
+      <!-- Culinary Architect -->
+      <div class="career-bento-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-top">
+          <div class="career-icon-wrap"><i class="fas fa-champagne-glasses"></i></div>
+          <span class="badge-pill-modern">Event Gastronome</span>
+          <h3 class="role-heading">Architect of Events</h3>
+          <p class="text-secondary small mb-0">Transforming gatherings into extraordinary experiences: menu design, sourcing, orchestrated service — flawless flow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Catering Universe Modern Dark Section -->
+<section class="mb-5">
+  <div class="dark-bento-section" data-aos="fade-up">
+    <div class="text-center mb-5">
+      <span class="sub-badge" style="background: rgba(255,255,255,0.06); color: var(--white-pure);">The Catering Universe</span>
+      <h2 class="display-5 fw-bold text-white mt-3">Culinary storytellers on the move</h2>
+      <p class="opacity-50 mx-auto col-lg-6">From high-profile weddings to private boardrooms — crafting unforgettable experiences through food on any scale.</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="dark-bento-card text-center">
+          <i class="fas fa-heart fs-2 mb-4" style="color: var(--terracotta);"></i>
+          <h3 class="h4 text-white fw-bold">Social Caterer</h3>
+          <p class="small opacity-70 mb-0">Creating unforgettable menus for weddings, birthdays, anniversaries. Culinary storytellers weaving flavors into life’s milestones.</p>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="dark-bento-card text-center">
+          <i class="fas fa-building fs-2 mb-4" style="color: var(--terracotta);"></i>
+          <h3 class="h4 text-white fw-bold">Corporate Caterer</h3>
+          <p class="small opacity-70 mb-0">Fueling meetings, conferences, executive luncheons. The energizers keeping minds sharp and spirits high with delicious fare.</p>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="dark-bento-card text-center">
+          <i class="fas fa-truck-fast fs-2 mb-4" style="color: var(--terracotta);"></i>
+          <h3 class="h4 text-white fw-bold">Mobile Caterer</h3>
+          <p class="small opacity-70 mb-0">Bringing the kitchen to streets with food trucks & kiosks. Culinary nomads spreading joy, one flavorful bite at a time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Digital & Entrepreneurial Paths Layout -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="sub-badge">The New Age of Cuisine</span>
+        <h2 class="display-5 fw-bold mb-4">Content creators & culinary entrepreneurs</h2>
+        <p class="text-secondary mb-5">Turn your gastronomic passion into influence, businesses, and empires. Food bloggers, critics, restaurateurs, and specialty producers — shaping how the world eats.</p>
+        
+        <div class="d-flex flex-column gap-3">
+          <div class="interactive-list-item d-flex gap-4 align-items-start">
+            <div class="p-2 bg-white rounded-3 border"><i class="fas fa-blog fs-4" style="color: var(--terracotta);"></i></div>
+            <div>
+              <h5 class="fw-bold mb-1">Food Bloggers & Recipe Developers</h5>
+              <p class="small text-secondary mb-0">Culinary librarians preserving and sharing knowledge through blogs, social media, and elite cookbooks.</p>
+            </div>
+          </div>
+          <div class="interactive-list-item d-flex gap-4 align-items-start">
+            <div class="p-2 bg-white rounded-3 border"><i class="fas fa-camera fs-4" style="color: var(--terracotta);"></i></div>
+            <div>
+              <h5 class="fw-bold mb-1">Food Photographers & Stylists</h5>
+              <p class="small text-secondary mb-0">Visual alchemists making ingredients shine beautifully for dynamic editorials, commercials, and branding campaigns.</p>
+            </div>
+          </div>
+          <div class="interactive-list-item d-flex gap-4 align-items-start">
+            <div class="p-2 bg-white rounded-3 border"><i class="fas fa-star fs-4" style="color: var(--terracotta);"></i></div>
+            <div>
+              <h5 class="fw-bold mb-1">Restaurant Reviewers & Critics</h5>
+              <p class="small text-secondary mb-0">Culinary detectives influencing mainstream taste, uncovering hidden gems, and shaping dining culture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-4">
+          <div class="col-sm-6">
+            <div class="career-bento-card">
+              <div>
+                <i class="fas fa-store fs-2 mb-4" style="color: var(--terracotta);"></i>
+                <h4 class="fw-bold h5">Restaurant Owner</h4>
+                <p class="small text-secondary mb-0">Architect of culinary empires — from cozy destination cafes to multi-starred fine dining establishments.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="career-bento-card">
+              <div>
+                <i class="fas fa-truck-ramp-box fs-2 mb-4" style="color: var(--terracotta);"></i>
+                <h4 class="fw-bold h5">Food Truck Owner</h4>
+                <p class="small text-secondary mb-0">Culinary adventurers serving urban street food magic, directly connecting vibrant communities through flavor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="career-bento-card">
+              <div>
+                <i class="fas fa-jar fs-2 mb-4" style="color: var(--terracotta);"></i>
+                <h4 class="fw-bold h5">Specialty Food Producer</h4>
+                <p class="small text-secondary mb-0">Artisanal small-batch items, curated sauces, premium pickles, and baked goods — turning simple home-grown ingredients into globally treasured shelf products.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advanced Leadership Segment -->
+<section style="background: var(--cream-dark); border-radius: 50px 50px 0 0;" class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5" data-aos="fade-up">
+        <div class="image-frame shadow-lg">
+          <img src="https://github.com/Gigx267/Dine-Park-2025/blob/main/b5.png?raw=true" class="img-fluid w-100" alt="chef planning" style="object-fit: cover; height: 480px;">
+        </div>
+      </div>
+      <div class="col-lg-7 ps-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <span class="sub-badge">Beyond the kitchen walls</span>
+        <h2 class="display-5 fw-bold mb-4">From menu concept to global direction</h2>
+        <p class="mb-4 text-secondary">True mastery involves advanced recipe engineering, dynamic cost analytics, executive team leadership, and inspiring entire hospitality brigades. The <strong>Culinary Architect</strong> doesn't just execute orders — they curate unique sensory experiences, source exceptional ingredients, and orchestrate flawless high-stakes service flow.</p>
+        
+        <div class="row g-3 mt-2 mb-5">
+          <div class="col-md-6 fw-semibold d-flex align-items-center gap-2 text-dark"><i class="fas fa-circle-check" style="color: var(--terracotta);"></i> Recipe engineering & R&D</div>
+          <div class="col-md-6 fw-semibold d-flex align-items-center gap-2 text-dark"><i class="fas fa-circle-check" style="color: var(--terracotta);"></i> Kitchen operations & P&L</div>
+          <div class="col-md-6 fw-semibold d-flex align-items-center gap-2 text-dark"><i class="fas fa-circle-check" style="color: var(--terracotta);"></i> Staff mentorship & culture</div>
+          <div class="col-md-6 fw-semibold d-flex align-items-center gap-2 text-dark"><i class="fas fa-circle-check" style="color: var(--terracotta);"></i> Multi-outlet operations</div>
+        </div>
+        <div><a href="apply.html" class="btn-modern-primary">Develop Your Leadership Edge →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Clean Modern Final CTA -->
+<section style="background: var(--deep-soil); color: var(--white-pure);" class="py-5">
+  <div class="container text-center py-5" data-aos="zoom-in">
+    <h2 class="display-4 fw-bold mb-3 text-white">Shape your legacy in cuisine.</h2>
+    <p class="mb-5 col-lg-7 mx-auto opacity-75 fs-5">Executive chef, food entrepreneur, lifestyle stylist, master caterer — Dine & Pack equips you with the technical precision, modern business strategy, and ultimate creative edge.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="apply.html" class="btn-modern-primary">Apply for 2026</a>
+      <a href="contact.html" class="btn-modern-outline">Talk to Admissions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Minimal Premium Footer -->
+<footer>
+  <div class="container text-center text-secondary small">
+    <p class="mb-3 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. Master your craft, forge your future.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center opacity-75">
+      <span><i class="fas fa-map-marker-alt me-2" style="color: var(--terracotta);"></i>ORIENTAL GARDEN, 14B Accra Street, Wuse Zone 5, Abuja</span>
+      <span class="d-none d-md-inline">|</span>
+      <span><i class="fas fa-phone-alt me-2"></i>08087630000</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 50 });
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.custom-nav');
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+</body>
+</html>

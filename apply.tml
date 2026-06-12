@@ -337,16 +337,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-center gap-lg-4 gap-3">
-           
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="Apply.html">Scholarship </a></li>
-              <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
-     
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
-          <li class="nav-item ms-lg-2"><a href="Apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#scholarship-app">Scholarship</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a href="#scholarship-app" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
         </ul>
       </div>
     </div>

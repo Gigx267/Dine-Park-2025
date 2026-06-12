@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dine & Pack — Contact & Admissions | Abuja Culinary Forge</title>
+  <meta name="description" content="Connect with Dine & Pack — sign up for courses, read testimonials, explore our gallery, meet founder Chef Mimi, and host unforgettable events in Abuja.">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Fonts & Core Design Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Frameworks & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <!-- Swiper for testimonials -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-premium: 0 8px 32px rgba(20, 14, 10, 0.02), 0 2px 6px rgba(20, 14, 10, 0.01);
+      --shadow-premium-lg: 0 32px 64px -16px rgba(20, 14, 10, 0.08);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font, .section-title h2, .section-title p {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Premium Navigation */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+      box-shadow: var(--shadow-premium);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(24px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+      .nav-link { color: var(--white-pure) !important; }
+    }
+
+    /* Hero Section */
+    .contact-hero {
+      min-height: 60vh;
+      background: linear-gradient(125deg, rgba(20, 14, 10, 0.85) 0%, rgba(20, 14, 10, 0.55) 100%), 
+                  url('https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true') center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      position: relative;
+    }
+    @media (max-width: 768px) { .contact-hero { background-attachment: scroll; min-height: 50vh; } }
+
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover { background: var(--deep-soil); transform: translateY(-4px); }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--terracotta);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--deep-soil);
+    }
+
+    /* Form Styling */
+    .form-glass, .book-form-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 36px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: var(--shadow-premium-lg);
+    }
+    .form-control, input, textarea, select {
+      background: white;
+      border: 1px solid var(--border-thin);
+      border-radius: 20px;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      transition: var(--transition-fluid);
+      width: 100%;
+    }
+    .form-control:focus, input:focus, textarea:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 4px rgba(224, 83, 60, 0.12);
+      outline: none;
+    }
+    button[type="submit"] {
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+    }
+    button[type="submit"]:hover { background: var(--deep-soil); transform: translateY(-3px); }
+
+    /* Testimonial Swiper */
+    .testimonial-item {
+      background: var(--white-pure);
+      border-radius: 28px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-premium);
+      transition: var(--transition-fluid);
+    }
+    .testimonial-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-premium-lg); }
+    .testimonial-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: 1rem auto;
+      object-fit: cover;
+      border: 3px solid var(--terracotta);
+    }
+    .quote-icon-left, .quote-icon-right { color: var(--terracotta); opacity: 0.5; font-size: 1.2rem; }
+
+    /* Gallery Grid */
+    .gallery-grid-custom {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item-custom {
+      overflow: hidden;
+      border-radius: 24px;
+      transition: var(--transition-fluid);
+    }
+    .gallery-item-custom img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.6s; }
+    .gallery-item-custom:hover img { transform: scale(1.05); }
+
+    /* Chef Card */
+    .chef-card {
+      background: var(--white-pure);
+      border-radius: 32px;
+      overflow: hidden;
+      text-align: center;
+      transition: var(--transition-fluid);
+      box-shadow: var(--shadow-premium);
+    }
+    .chef-card img { width: 100%; height: 320px; object-fit: cover; }
+    .chef-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-premium-lg); }
+
+    /* Tabs for Events */
+    .nav-tabs .nav-link {
+      border-radius: 100px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      background: var(--white-pure);
+      border: 1px solid var(--border-thin);
+      color: var(--deep-soil);
+    }
+    .nav-tabs .nav-link.active {
+      background: var(--terracotta);
+      color: white;
+      border-color: var(--terracotta);
+    }
+
+    /* Contact Info Cards */
+    .info-card {
+      background: var(--white-pure);
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      box-shadow: var(--shadow-premium);
+    }
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(224, 83, 60, 0.1);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--terracotta);
+      font-size: 1.3rem;
+    }
+
+    footer { background: var(--deep-soil); color: rgba(255,255,255,0.7); }
+    footer a { color: var(--terracotta); text-decoration: none; }
+    .footer-links ul li a:hover, .social-links a:hover { color: var(--terracotta); }
+
+    @media (max-width: 768px) { .section-title p { font-size: 1.2rem; } }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+  <div class="container">
+    <a class="brand" href="index.html">Dine & Pack</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span></span><span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="apply.html">Apply</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html" style="color: var(--terracotta) !important;">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Enroll 2026</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="contact-hero">
+  <div class="container" data-aos="fade-up">
+    <div class="col-xl-8"><span class="sub-badge" style="background:rgba(255,255,255,0.12);color:white;">— Join The Forge</span>
+    <h1 class="display-3 fw-bold text-white">Sign Up &<br><span class="fw-light fst-italic" style="color:var(--terracotta)">begin your journey.</span></h1></div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Contact Section with Map & Form -->
+<section id="contact" class="section-padding" style="background: var(--cream-dark); padding: 80px 0;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title"><h2>Contact</h2><p>Contact Us</p></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.0120906274833!2d7.459099238224048!3d9.061558497750267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b030da98ab1%3A0x82c4d4c3d0e7d1b3!2sOriental%20Garden!5e0!3m2!1sen!2sng!4v1704085274239!5m2!1sen!2sng" width="100%" height="350" style="border:0; border-radius: 32px;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="row mt-5">
+      <div class="col-lg-4"><div class="info-card"><div class="info-icon"><i class="fa-solid fa-location-dot"></i></div><div><h5 class="mb-1">Location</h5><p class="mb-0">ORIENTAL GARDEN 14B ACCRA STREET WUSE ZONE 5 ABUJA</p></div></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-regular fa-clock"></i></div><div><h5 class="mb-1">Open Hours</h5><p class="mb-0">Monday-Saturday: 08:00 AM - 8:00 PM</p></div></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-regular fa-envelope"></i></div><div><h5 class="mb-1">Email</h5><p class="mb-0">Dine&Pack@Gmail.com</p></div></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-phone"></i></div><div><h5 class="mb-1">Call</h5><p class="mb-0">08087630000</p></div></div></div>
+      <div class="col-lg-8"><div class="form-glass"><form id="contactForm" action="#"><div class="row"><div class="col-md-6 mb-3"><input type="text" class="form-control" name="name" placeholder="Your Name" required></div><div class="col-md-6 mb-3"><input type="email" class="form-control" name="email" placeholder="Your Email" required></div></div><div class="mb-3"><input type="text" class="form-control" name="subject" placeholder="Subject" required></div><div class="mb-3"><textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea></div><div class="text-center"><button type="submit">Send Message <i class="fa-regular fa-paper-plane ms-2"></i></button></div></form></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4"><h3 class="text-white">Dine & Pack</h3><p>14B ORIENTAL GARDEN ACCRA STREET WUSE ZONE 5 ABUJA<br><strong>Phone:</strong> 08087630000<br><strong>Email:</strong> Dine&Pack@Gmail.com</p><div class="social-links"><a href="#" class="me-3"><i class="fab fa-twitter"></i></a><a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a><a href="#" class="me-3"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="col-lg-2 col-md-6 mb-4"><h5>Useful Links</h5><ul class="list-unstyled"><li><a href="#">Sign Up</a></li><li><a href="#">Newsletter</a></li><li><a href="#">Classes</a></li><li><a href="#">Terms of Packages</a></li></ul></div>
+      <div class="col-lg-3 col-md-6 mb-4"><h5>Our Services</h5><ul class="list-unstyled"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="courses.html">Classes</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="col-lg-3 col-md-6 mb-4"><h5>Newsletter</h5><form><input type="email" class="form-control mb-2" placeholder="Your email"><button class="btn-modern-primary w-100" style="padding:10px;">Subscribe</button></form></div>
+    </div>
+    <div class="text-center pt-4 border-top border-secondary"><small>&copy; Copyright <strong>Dine & Pack</strong>. All Rights Reserved.\
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ; </small></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+  window.addEventListener('scroll', () => { document.querySelector('.custom-nav').classList.toggle('scrolled', window.scrollY > 40); });
+  new Swiper('.testimonial-swiper', { loop: true, pagination: { el: '.swiper-pagination', clickable: true }, slidesPerView: 1, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+  document.getElementById('signupForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Enrollment request sent! We will contact you shortly.'); e.target.reset(); });
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Message sent! Thank you for reaching out.'); e.target.reset(); });
+</script>
+</body>
+</html>

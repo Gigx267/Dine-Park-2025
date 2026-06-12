@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Chef-on-Demand | Join Our Culinary Team — Registration & Payment</title>
+  <meta name="description" content="Join Chef-on-Demand: monthly subscription of ₦4,000 unlocks exclusive job alerts, event opportunities, premium newsletters, and new recipes for independent chefs.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --gold-accent: #D4AF37;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Navbar */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+      .nav-link {
+        color: var(--white-pure) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+    }
+
+    /* Buttons */
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      color: var(--white-pure);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+    .btn-modern-outline {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white-pure);
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-modern-outline:hover {
+      background: var(--white-pure);
+      color: var(--deep-soil);
+      border-color: var(--white-pure);
+      transform: translateY(-4px);
+    }
+
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(20,14,10,0.75) 0%, rgba(20,14,10,0.4) 60%, var(--cream) 100%),
+                  url('https://www.dineandpack.com.ng/assets/img/p%20(21).JPG') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: var(--white-pure);
+      padding-top: 140px;
+    }
+    .hero-title {
+      font-size: calc(2.2rem + 3.8vw);
+      line-height: 1.05;
+      color: var(--white-pure);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .section-padding {
+      padding: 140px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 90px 0; }
+    }
+
+    /* Premium form container */
+    .chef-form-wrapper {
+      background: var(--white-pure);
+      border-radius: 48px;
+      box-shadow: 0 40px 70px rgba(20, 14, 10, 0.08);
+      transition: var(--transition-fluid);
+      overflow: hidden;
+      border: 1px solid rgba(20, 14, 10, 0.04);
+    }
+    .chef-form-wrapper label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      color: var(--deep-soil);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .chef-form-wrapper input,
+    .chef-form-wrapper select,
+    .chef-form-wrapper textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 20px;
+      border: 1px solid #e2e0db;
+      background: #fefcf9;
+      transition: 0.25s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .chef-form-wrapper input:focus,
+    .chef-form-wrapper select:focus,
+    .chef-form-wrapper textarea:focus {
+      border-color: var(--terracotta);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(224,83,60,0.1);
+      background: white;
+    }
+    .required-star::after {
+      content: " *";
+      color: var(--terracotta);
+      font-weight: bold;
+    }
+    .fee-card {
+      background: linear-gradient(135deg, #FFF6ED 0%, #FFF9F2 100%);
+      border-radius: 28px;
+      padding: 28px;
+      border-left: 5px solid var(--terracotta);
+      margin: 25px 0;
+    }
+    .price-badge {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Syne', sans-serif;
+      color: var(--terracotta);
+    }
+    .benefits-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .benefit-pill {
+      background: rgba(224, 83, 60, 0.08);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .benefit-pill i {
+      color: var(--terracotta);
+    }
+    .checkbox-custom {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .checkbox-custom input {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+    }
+    .form-status {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .form-status.success { color: #2b6e3c; }
+    .form-status.error { color: #c0392b; }
+    .form-status.loading { color: var(--terracotta); }
+
+    .dark-bento-section {
+      background-color: var(--deep-soil);
+      color: var(--white-pure);
+      border-radius: 50px;
+      margin: 0 20px;
+      padding: 120px 40px;
+    }
+    @media (max-width: 768px) {
+      .dark-bento-section { padding: 80px 20px; margin: 0 10px; }
+    }
+    footer {
+      background: var(--white-pure);
+      padding: 80px 0 40px 0;
+      border-top: 1px solid var(--border-thin);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+    }
+    /* Payment popup / modal smooth */
+    .payment-redirect-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 14, 10, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
+    }
+    .payment-redirect-overlay.active {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .payment-card {
+      background: var(--white-pure);
+      border-radius: 40px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+      animation: fadeSlideUp 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .spinner-border-sm {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+    <div class="container">
+      <a class="brand" href="index.html">Chef-on-Demand</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-lg-4 gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef-on-demand.html">Chef on Demand</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
+          <li class="nav-item ms-lg-2"><a href="Apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APPLICATION FORM (Chef-on-Demand) with Registration + Payment Redirect -->
+  <section id="apply-form" class="section-padding" style="background-color: var(--cream-dark); border-radius: 50px 50px 0 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="chef-form-wrapper p-4 p-md-5">
+            <div class="text-center mb-4">
+              <span class="sub-badge">Join our culinary team</span>
+              <h2 class="display-6 fw-bold mt-2">Chef-on-Demand Registration</h2>
+              <p class="text-secondary">Complete your registration and proceed to secure payment (₦4,000 monthly subscription). <strong>After registration, you'll be directed to our secure payment page</strong> to activate your chef profile.</p>
+            </div>
+
+            <!-- monthly fee info -->
+            <div class="alert alert-warning bg-warning bg-opacity-10 border-0 rounded-4 p-4 mb-4" role="alert">
+              <div class="d-flex gap-3 align-items-start">
+                <i class="fas fa-credit-card fs-2 text-terracotta"></i>
+                <div>
+                  <h5 class="fw-bold mb-1">₦4,000 Monthly Platform Fee — Pay after registration</h5>
+                  <p class="mb-0 small">Once you submit this registration form, you will be redirected to the official Paystack payment link (<strong>paystack.shop/pay/07g2688dpn</strong>) to complete your ₦4,000 subscription. Your chef profile will be activated upon successful payment. You keep 100% of your service fees!</p>
+                </div>
+              </div>
+            </div>
+
+            <form id="chef-registration-form" method="POST">
+              <!-- Personal Information -->
+              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Culinary Professional Details</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="required-star">Full Name</label>
+                  <input type="text" name="full_name" id="full_name" placeholder="e.g., Adaobi Nwosu" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Phone Number (WhatsApp preferred)</label>
+                  <input type="tel" name="phone" id="phone" placeholder="080XXXXXX" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Email Address</label>
+                  <input type="email" name="email" id="email" placeholder="chef@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Location (City/Area)</label>
+                  <input type="text" name="location" id="location" placeholder="e.g., Abuja, Lagos" required>
+                </div>
+                <div class="col-12">
+                  <label class="required-star">Years of Professional Culinary Experience</label>
+                  <select name="experience" id="experience" required>
+                    <option value="">Select</option>
+                    <option>Less than 1 year</option>
+                    <option>1-3 years</option>
+                    <option>4-6 years</option>
+                    <option>7-10 years</option>
+                    <option>10+ years</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="required-star">Cuisine Specialties (max 3)</label>
+                  <input type="text" name="cuisine" id="cuisine" placeholder="e.g., Nigerian, Continental, Pastry, Asian Fusion" required>
+                </div>
+                <div class="col-12">
+                  <label>Brief Bio / Chef Story</label>
+                  <textarea name="bio" id="bio" rows="2" placeholder="Tell us about your culinary journey, training, and what makes your cooking unique."></textarea>
+                </div>
+                <div class="col-12">
+                  <label class="required-star">Do you have your own cooking equipment / transport?</label>
+                  <select name="equipment" id="equipment" required>
+                    <option value="">Select</option>
+                    <option>Yes, full kit & reliable transport</option>
+                    <option>Limited equipment but reliable transport</option>
+                    <option>No equipment but can arrange</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label>Link to Portfolio / Instagram / Food Gallery (Optional)</label>
+                  <input type="url" name="portfolio" id="portfolio" placeholder="https://instagram.com/yourchefpage">
+                </div>
+              </div>
+
+              <h4 class="fw-bold mt-4 mb-3" style="color: var(--deep-soil);">Why Join Chef-on-Demand?</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-12">
+                  <label class="required-star">Why are you interested in earning extra income through our platform?</label>
+                  <textarea name="motivation" id="motivation" rows="2" required placeholder="e.g., I want to work private dinners on weekends, expand my network..."></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label class="required-star">What types of events are you most comfortable with?</label>
+                  <textarea name="event_preference" id="event_preference" rows="2" required placeholder="Private dinner parties, corporate catering, pop-up events, weddings etc."></textarea>
+                </div>
+              </div>
+
+              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Agreement & Payment Acknowledgment</h4>
+              <div class="mb-3">
+                <div class="checkbox-custom">
+                  <input type="checkbox" id="feeAgree" required>
+                  <label for="feeAgree" class="small">I understand that upon registration, I will be redirected to the official Paystack payment link (<strong>₦4,000 monthly subscription</strong>). I agree that my application will be processed after payment confirmation, unlocking job alerts, event notifications, newsletters, and priority support.</label>
+                </div>
+                <div class="checkbox-custom">
+                  <input type="checkbox" id="dataAgree" required>
+                  <label for="dataAgree" class="small">I confirm that the information provided is accurate. I give consent for Chef-on-Demand to process my registration and contact me regarding opportunities and subscription status.</label>
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" id="formSubmitBtn" class="btn-modern-primary w-100 w-md-auto" style="padding: 14px 48px;">Register & Proceed to Payment →</button>
+                <div id="my-form-status" class="form-status mt-3"></div>
+              </div>
+            </form>
+
+            <!-- extra support -->
+            <div class="mt-5 pt-3 text-center border-top">
+              <div class="d-inline-block w-100" style="background: #f6f3ef; border-radius: 32px; padding: 18px;">
+                <p class="mb-2 fw-semibold">📞 Questions about the subscription or registration process? Speak to our chef support team.</p>
+                <a href="https://wa.me/2348087630000" class="btn-modern-primary" style="background:#25D366; display:inline-block; padding: 10px 24px; border-radius: 40px; color:white; text-decoration:none; background-color:#25D366;"><i class="fab fa-whatsapp me-2"></i>Chat with Support</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="cta-banner" class="my-5">
+    <div class="container">
+      <div class="dark-bento-section text-center" data-aos="zoom-in">
+        <span class="sub-badge" style="background: rgba(255,255,255,0.06); color: var(--white-pure);">Flexible • Premium • Lucrative</span>
+        <h2 class="display-4 fw-bold text-white mt-3 mb-4">Turn Your Culinary Craft Into Extra Income</h2>
+        <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 650px;">Join 100+ independent chefs already accessing premium gigs, exclusive recipes, and corporate events. Your ₦4,000 monthly unlocks a world of opportunities.</p>
+        <a href="#apply-form" class="btn-modern-primary">Apply to our Culinary Team →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Redirect Overlay (visual feedback) -->
+  <div id="paymentOverlay" class="payment-redirect-overlay">
+    <div class="payment-card">
+      <i class="fas fa-arrow-right-to-bracket fs-1" style="color: var(--terracotta); margin-bottom: 1rem;"></i>
+      <h4 class="fw-bold">Registration complete!</h4>
+      <p class="mt-2">Redirecting you to the secure Paystack payment page to complete your ₦4,000 subscription.</p>
+      <div class="spinner-border text-terracotta mt-3" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="small text-secondary mt-3">Please do not close this window. You will be redirected automatically.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center text-secondary small">
+      <p class="mb-3 fw-medium">© 2026 Chef-on-Demand — Professional Chefing Services. Abuja, Nigeria.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center opacity-75">
+        <span><i class="fas fa-map-marker-alt me-2" style="color: var(--terracotta);"></i>ORIENTAL GARDEN, 14B Accra Street, Wuse Zone 5, Abuja</span>
+        <span class="d-none d-md-inline">|</span>
+        <span><i class="fas fa-phone-alt me-2"></i>08087630000</span>
+        <span><i class="far fa-envelope me-2"></i>chefs@dineandpack.com</span>
+      </div>
+      <p class="mt-4 fs-6 opacity-50">Membership fee of ₦4,000/month applies after registration. Cancel anytime.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 50 });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.custom-nav');
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // PAYMENT REDIRECT URL (provided)
+    const PAYMENT_URL = "https://paystack.shop/pay/07g2688dpn";
+    
+    // Helper: simple client-side storage simulation (store registration data in localStorage for demo)
+    // This simulates "registration record" before payment. In production, you'd send to backend.
+    // But we redirect to payment only after successful "local registration" + field validation.
+    
+    const form = document.getElementById("chef-registration-form");
+    const statusDiv = document.getElementById("my-form-status");
+    const submitBtn = document.getElementById("formSubmitBtn");
+    const overlay = document.getElementById("paymentOverlay");
+    
+    // Function to store registration data in localStorage (simulate database record)
+    function storeRegistrationData(formDataObj) {
+      // generate a temp registration id
+      const regId = 'REG_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
+      const registrationRecord = {
+        registrationId: regId,
+        timestamp: new Date().toISOString(),
+        fullName: formDataObj.full_name,
+        email: formDataObj.email,
+        phone: formDataObj.phone,
+        location: formDataObj.location,
+        experience: formDataObj.experience,
+        cuisine: formDataObj.cuisine,
+        bio: formDataObj.bio || '',
+        equipment: formDataObj.equipment,
+        portfolio: formDataObj.portfolio || '',
+        motivation: formDataObj.motivation,
+        event_preference: formDataObj.event_preference,
+        status: 'pending_payment'
+      };
+      // store in localStorage for demo purposes (so we can reference after payment ideally)
+      // Also we can keep in session storage for redirect handshake
+      localStorage.setItem('chef_registration_' + regId, JSON.stringify(registrationRecord));
+      sessionStorage.setItem('pending_chef_registration', JSON.stringify(registrationRecord));
+      return regId;
+    }
+    
+    // Validate checkboxes separately
+    function validateCheckboxes() {
+      const feeAgree = document.getElementById('feeAgree');
+      const dataAgree = document.getElementById('dataAgree');
+      if (!feeAgree.checked) {
+        statusDiv.innerHTML = "❌ Please confirm that you understand the monthly subscription fee and payment redirect.";
+        statusDiv.className = "form-status error";
+        return false;
+      }
+      if (!dataAgree.checked) {
+        statusDiv.innerHTML = "❌ You must consent to data processing and communication to proceed.";
+        statusDiv.className = "form-status error";
+        return false;
+      }
+      return true;
+    }
+    
+    // Extract form data as object
+    function getFormData() {
+      return {
+        full_name: document.getElementById('full_name').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        location: document.getElementById('location').value.trim(),
+        experience: document.getElementById('experience').value,
+        cuisine: document.getElementById('cuisine').value.trim(),
+        bio: document.getElementById('bio').value.trim(),
+        equipment: document.getElementById('equipment').value,
+        portfolio: document.getElementById('portfolio').value.trim(),
+        motivation: document.getElementById('motivation').value.trim(),
+        event_preference: document.getElementById('event_preference').value.trim()
+      };
+    }
+    
+    // Basic email & phone validation
+    function validateFormData(data) {
+      if (!data.full_name) return "Full name is required.";
+      if (!data.phone || data.phone.length < 8) return "Valid phone number is required.";
+      const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
+      if (!data.email || !emailRegex.test(data.email)) return "Valid email address is required.";
+      if (!data.location) return "Location is required.";
+      if (!data.experience) return "Please select your years of experience.";
+      if (!data.cuisine) return "Cuisine specialties required.";
+      if (!data.equipment) return "Please indicate equipment & transport availability.";
+      if (!data.motivation) return "Please share your motivation for joining.";
+      if (!data.event_preference) return "Please indicate your event preferences.";
+      return null;
+    }
+    
+    // Main submit handler: store registration and then redirect to Paystack payment page
+    async function handleRegistration(event) {
+      event.preventDefault();
+      
+      // Clear previous status
+      statusDiv.innerHTML = "";
+      statusDiv.className = "form-status";
+      
+      // validate checkboxes
+      if (!validateCheckboxes()) return;
+      
+      const formData = getFormData();
+      const validationError = validateFormData(formData);
+      if (validationError) {
+        statusDiv.innerHTML = `❌ ${validationError}`;
+        statusDiv.className = "form-status error";
+        submitBtn.disabled = false;
+        return;
+      }
+      
+      // Disable button to prevent double submission
+      submitBtn.disabled = true;
+      statusDiv.innerHTML = "⏳ Registering your details & preparing payment...";
+      statusDiv.className = "form-status loading";
+      
+      try {
+        // Simulate async registration (client side store)
+        // In a production environment you would send this to a backend API.
+        // For this demo, we store locally and then redirect to Paystack.
+        // Show slight delay for realistic UX
+        await new Promise(resolve => setTimeout(resolve, 600));
+        
+        // Store registration data (simulate successful registration)
+        const regId = storeRegistrationData(formData);
+        console.log("Registration stored with ID:", regId);
+        
+        // Success message
+        statusDiv.innerHTML = "✅ Registration successful! Redirecting you to the secure payment gateway...";
+        statusDiv.className = "form-status success";
+        
+        // Show overlay with redirect animation before actual redirect
+        overlay.classList.add('active');
+        
+        // Short delay to let overlay display, then redirect to Paystack payment page
+        setTimeout(() => {
+          // Redirect to the exact Paystack payment URL as required
+          window.location.href = PAYMENT_URL;
+        }, 1500);
+        
+      } catch (err) {
+        console.error(err);
+        statusDiv.innerHTML = "❌ Registration error. Please try again or contact support.";
+        statusDiv.className = "form-status error";
+        submitBtn.disabled = false;
+        overlay.classList.remove('active');
+      }
+    }
+    
+    form.addEventListener("submit", handleRegistration);
+    
+    // Fallback: if user clicks back while overlay, ensure we don't keep loading state
+    window.addEventListener('pageshow', function() {
+      overlay.classList.remove('active');
+      submitBtn.disabled = false;
+    });
+  </script>
+</body>
+</html>

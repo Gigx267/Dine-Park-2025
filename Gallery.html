@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gallery — Dine & Pack | Visual Chronicle of Culinary Artistry, Abuja</title>
+  <meta name="description" content="Step into the visual heartbeat of Dine & Pack: a cinematic gallery of plating mastery, pastry elegance, live kitchen energy, and unforgettable community events.">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Fonts & Core Design Tokens (matching main identity) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Frameworks & Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <!-- Lightgallery for premium lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-premium: 0 8px 32px rgba(20, 14, 10, 0.02), 0 2px 6px rgba(20, 14, 10, 0.01);
+      --shadow-premium-lg: 0 32px 64px -16px rgba(20, 14, 10, 0.08);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Premium Navigation (consistent with about/courses) */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+      box-shadow: var(--shadow-premium);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+        box-shadow: var(--shadow-premium-lg);
+      }
+      .nav-link {
+        color: var(--white-pure) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+    }
+
+    /* Hero Section — immersive full-width */
+    .gallery-hero {
+      min-height: 75vh;
+      background: linear-gradient(125deg, rgba(20, 14, 10, 0.82) 0%, rgba(20, 14, 10, 0.45) 100%), 
+                  url('https://github.com/Gigx267/Dine-Park-2025/blob/main/b5.png?raw=true') center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .gallery-hero { background-attachment: scroll; min-height: 65vh; }
+    }
+
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      color: var(--white-pure);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+    .btn-modern-outline {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white-pure);
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-modern-outline:hover {
+      background: var(--white-pure);
+      color: var(--deep-soil);
+      border-color: var(--white-pure);
+      transform: translateY(-4px);
+    }
+
+    /* Filter pills — refined modern */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(20, 14, 10, 0.08);
+      font-weight: 700;
+      padding: 10px 28px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      color: var(--deep-soil);
+      box-shadow: var(--shadow-premium);
+      backdrop-filter: blur(4px);
+    }
+    .filter-btn.active {
+      background: var(--terracotta);
+      color: white;
+      border-color: var(--terracotta);
+      box-shadow: 0 8px 20px rgba(224,83,60,0.25);
+      transform: translateY(-2px);
+    }
+    .filter-btn:hover:not(.active) {
+      background: var(--cream-dark);
+      transform: translateY(-2px);
+      border-color: var(--clay-muted);
+    }
+
+    /* Masonry Grid — elegant, responsive */
+    .gallery-grid {
+      column-count: 3;
+      column-gap: 28px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 28px;
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition-fluid);
+      background: var(--white-pure);
+      box-shadow: var(--shadow-premium);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      height: auto;
+      border-radius: 28px;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium-lg);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+    .overlay-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(20,14,10,0.8) 0%, rgba(20,14,10,0) 100%);
+      color: white;
+      padding: 24px 20px 16px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      border-radius: 0 0 28px 28px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(2px);
+    }
+    .gallery-item:hover .overlay-caption {
+      opacity: 1;
+    }
+
+    @media (max-width: 992px) {
+      .gallery-grid { column-count: 2; column-gap: 20px; }
+    }
+    @media (max-width: 576px) {
+      .gallery-grid { column-count: 1; }
+    }
+
+    /* Lightbox custom styling */
+    .lg-backdrop {
+      background-color: rgba(20, 14, 10, 0.95);
+      backdrop-filter: blur(18px);
+    }
+    .lg-outer .lg-thumb-outer {
+      background: rgba(20, 14, 10, 0.7);
+    }
+    .lg-title {
+      font-family: 'Syne', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .section-padding {
+      padding: 120px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 80px 0; }
+    }
+
+    .quote-block {
+      background: var(--cream-dark);
+      border-radius: 48px;
+    }
+    footer {
+      background: var(--white-pure);
+      border-top: 1px solid var(--border-thin);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation bar (consistent across pages) -->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+  <div class="container">
+    <a class="brand" href="index.html">Dine & Pack</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html" style="color: var(--terracotta) !important;">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="apply.html">Apply</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Enroll 2026</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with immersive storytelling -->
+<section class="gallery-hero">
+  <div class="container">
+    <div class="row" data-aos="fade-up" data-aos-duration="1200">
+      <div class="col-xl-8 col-lg-10">
+        <span class="sub-badge" style="background: rgba(255,255,255,0.12); color: var(--white-pure);">— The Visual Archive</span>
+        <h1 class="display-2 fw-bold text-white mb-4" style="line-height: 1.1; letter-spacing: -0.04em;">Moments of <span class="fw-light fst-italic" style="color: var(--terracotta);">flame & finesse</span>.</h1>
+        <p style="color: aliceblue;">Explore the heartbeat of our kitchen: plating poetry, pastry elegance, live-fire energy, and the vibrant community that defines Abuja's premier culinary forge.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#galleryGrid" class="btn-modern-primary scroll-link">Explore Gallery →</a>
+          <a href="apply.html" class="btn-modern-outline">Begin Your Journey</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section with Filter + Masonry -->
+<section class="section-padding" style="background: var(--cream);">
+  <div class="container">
+    <div class="text-center mb-4" data-aos="fade-up">
+      <span class="sub-badge">culinary storytelling</span>
+      <h2 class="display-5 fw-bold mb-3">Captured in pixels & passion</h2>
+      <div class="mx-auto" style="width: 70px; height: 3px; background: var(--terracotta); border-radius: 2px;"></div>
+      <p class="mx-auto col-lg-7 text-secondary mt-4">Every dish, every smile, every flame — a frame from our story.</p>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="filter-bar" data-aos="fade-up" data-aos-delay="100">
+      <button class="filter-btn active" data-filter="all">All Works</button>
+      <button class="filter-btn" data-filter="plating">Plating & Art</button>
+      <button class="filter-btn" data-filter="events">Events & Community</button>
+      <button class="filter-btn" data-filter="pastry">Pastry & Baking</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchen In Action</button>
+    </div>
+
+    <!-- Dynamic Masonry Grid injected via JS -->
+    <div class="gallery-grid" id="galleryGrid" data-aos="fade-up" data-aos-delay="150"></div>
+
+    <div class="text-center mt-5 pt-4" data-aos="fade-up">
+      <a href="apply.html" class="btn-modern-primary px-5">Join the Culinary Movement <i class="fa-regular fa-arrow-right-long ms-2"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Inspirational Quote Section (matching refined identity) -->
+<section class="py-5 quote-block">
+  <div class="container py-5 text-center" data-aos="zoom-in">
+    <i class="fa-solid fa-kitchen-set fs-1" style="color: var(--terracotta); opacity: 0.7; margin-bottom: 1.5rem; display: inline-block;"></i>
+    <p class="fs-2 fw-light" style="font-family: 'Syne', sans-serif; max-width: 800px; margin: 0 auto; line-height: 1.3; letter-spacing: -0.02em;">“Where craft meets soul — and every plate tells a story.”</p>
+    <p class="mt-4 text-secondary fw-semibold">— Chef In Residence, Dine & Pack Culinary Forge</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5">
+  <div class="container text-center text-secondary small">
+    <p class="mb-0 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. All visual narratives reserved.</p>
+    <div class="mt-3 d-flex justify-content-center gap-4">
+      <a href="#" class="text-secondary text-decoration-none"><i class="fab fa-instagram me-1"></i> Instagram</a>
+      <a href="#" class="text-secondary text-decoration-none"><i class="fab fa-facebook-f me-1"></i> Facebook</a>
+      <a href="#" class="text-secondary text-decoration-none"><i class="fab fa-youtube me-1"></i> YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+<script>
+  AOS.init({ duration: 900, easing: 'ease-out-quint', once: true, offset: 40 });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.custom-nav');
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // Smooth scroll to gallery
+  document.querySelectorAll('.scroll-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ---------------- CURATED GALLERY ASSETS (high-res mix, following same design style) ----------------
+  const galleryItems = [
+    { id: 1, category: 'plating', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b1.png?raw=true', alt: 'Microgreen & sauce composition' },
+    { id: 2, category: 'pastry', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b2.png?raw=true', alt: 'Croissant interior layers' },
+    { id: 3, category: 'kitchen', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true', alt: 'Chef grilling station' },
+    { id: 4, category: 'events', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b5.png?raw=true', alt: 'Alumni celebration dinner' },
+    { id: 5, category: 'plating', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b6.png?raw=true', alt: 'Plated seafood dish' },
+    { id: 6, category: 'pastry', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b7.png?raw=true', alt: 'Mirror glaze cake' },
+    { id: 7, category: 'kitchen', title: '', img: 'https://www.dineandpack.com.ng/p%20(8).png', alt: 'Precision cutting' },
+    { id: 8, category: 'events', title: '', img: 'https://www.dineandpack.com.ng/p%20(10).jpg', alt: 'Students with certificates' },
+    { id: 9, category: 'plating', title: '', img: 'https://www.dineandpack.com.ng/p%20(4).JPG', alt: 'Vibrant main course' },
+    { id: 10, category: 'pastry', title: '', img: 'https://www.dineandpack.com.ng/p%20(3).png', alt: 'Bread basket display' },
+    { id: 11, category: 'kitchen', title: '', img: 'https://www.dineandpack.com.ng/forms/sep7-43.jpg', alt: 'Chef guiding student' },
+    { id: 12, category: 'events', title: '', img: 'https://www.dineandpack.com.ng/p%20(21).JPG', alt: 'Sommelier experience' },
+    { id: 13, category: 'plating', title: '', img: 'https://www.dineandpack.com.ng/p%20(9).png', alt: 'Textured plating' },
+    { id: 14, category: 'pastry', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b14.png?raw=true', alt: 'Layered mousse cake' },
+    { id: 15, category: 'kitchen', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b15.png?raw=true', alt: 'Flambé technique' },
+    { id: 16, category: 'events', title: '', img: 'https://www.dineandpack.com.ng/p%20(12).jpg', alt: 'Youth empowerment session' },
+    { id: 17, category: 'plating', title: '', img: 'https://www.dineandpack.com.ng/p%20(15).jpg', alt: 'Delicate seafood composition' },
+    { id: 18, category: 'pastry', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b2.png?raw=true', alt: 'Three-tier buttercream' },
+    { id: 19, category: 'kitchen', title: '', img: 'https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true', alt: 'Smoked brisket' },
+    { id: 20, category: 'events', title: '', img: 'https://www.dineandpack.com.ng/p%20(10).png', alt: 'Outdoor dining experience' }
+  ];
+
+  let currentFilter = 'all';
+  const container = document.getElementById('galleryGrid');
+
+  function renderGallery() {
+    const filtered = currentFilter === 'all' ? galleryItems : galleryItems.filter(item => item.category === currentFilter);
+    let html = '';
+    filtered.forEach(item => {
+      html += `
+        <div class="gallery-item" data-category="${item.category}" data-src="${item.img}" data-sub-html="<h4 class='lg-title' style='font-family:Syne, sans-serif; font-weight:700;'>${item.title}</h4><p style='font-size:0.75rem; opacity:0.8;'>${item.alt}</p>">
+          <img src="${item.img}" alt="${item.alt}" loading="lazy" class="img-fluid">
+          <div class="overlay-caption">✨ ${item.title}</div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+
+    // Reinitialize lightGallery after dynamic render
+    if (window.lightGallery) {
+      if (window.lgInstance) window.lgInstance.destroy(true);
+      window.lgInstance = lightGallery(container, {
+        selector: '.gallery-item',
+        speed: 480,
+        preload: 2,
+        download: false,
+        counter: true,
+        thumbnail: true,
+        showThumbByDefault: false,
+        backdropDuration: 280,
+        escKey: true
+      });
+    }
+  }
+
+  // filter buttons logic
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.getAttribute('data-filter');
+      renderGallery();
+    });
+  });
+
+  renderGallery();
+
+  // fallback in case images 404, replace with graceful placeholder but keep aesthetic
+  window.addEventListener('load', () => {
+    const images = document.querySelectorAll('.gallery-item img');
+    images.forEach(img => {
+      img.addEventListener('error', function() {
+        if (!this.src.includes('unsplash')) {
+          this.src = 'https://images.unsplash.com/photo-1556911220-bda9f5f7597e?w=600&h=600&fit=crop';
+        }
+      });
+    });
+  });
+</script>
+
+<!-- ensure lightgallery styles responsiveness -->
+<style>
+  .lg-title { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
+  .lg-desc { font-size: 0.8rem; }
+  .gallery-item {
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+  .btn-modern-primary i, .btn-modern-outline i {
+    transition: transform 0.2s;
+  }
+  .btn-modern-primary:hover i {
+    transform: translateX(6px);
+  }
+  .display-2 {
+    font-size: clamp(2.6rem, 7vw, 4.3rem);
+  }
+</style>
+</body>
+</html>

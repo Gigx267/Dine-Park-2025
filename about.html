@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dine & Pack — Culinary Forge, Abuja | About</title>
+  <meta name="description" content="Step into Abuja's vibrant culinary forge. Where mastery meets entrepreneurship — fundamental skills, business wisdom, mentorship & immersive events.">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Fonts & Core Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Frameworks & Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-premium: 0 8px 32px rgba(20, 14, 10, 0.02), 0 2px 6px rgba(20, 14, 10, 0.01);
+      --shadow-premium-lg: 0 32px 64px -16px rgba(20, 14, 10, 0.08);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Premium Sticky Navigation Bar */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+      box-shadow: var(--shadow-premium);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+
+    /* Responsive Mobile Hamburger Menu */
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+        box-shadow: var(--shadow-premium-lg);
+      }
+      .nav-link {
+        color: var(--white-pure) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+    }
+
+    /* Immersive About Hero Structure */
+    .about-hero {
+      min-height: 85vh;
+      background: linear-gradient(135deg, rgba(20,14,10,0.85) 0%, rgba(20,14,10,0.45) 100%), 
+                  url('https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      position: relative;
+      background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+      .about-hero { background-attachment: scroll; min-height: 70vh; }
+    }
+
+    /* Modern Action Triggers */
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      color: var(--white-pure);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+
+    .btn-modern-outline {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white-pure);
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-modern-outline:hover {
+      background: var(--white-pure);
+      color: var(--deep-soil);
+      border-color: var(--white-pure);
+      transform: translateY(-4px);
+    }
+
+    .btn-outline-soil {
+      border: 1.5px solid var(--deep-soil);
+      background: transparent;
+      color: var(--deep-soil);
+      padding: 14px 36px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-soil:hover {
+      background: var(--deep-soil);
+      color: var(--cream);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(20, 14, 10, 0.1);
+    }
+
+    .section-padding {
+      padding: 140px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 90px 0; }
+    }
+
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    .narrative-text {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(20, 14, 10, 0.75);
+      line-height: 1.75;
+    }
+
+    /* Micro-interactive Grid Item Enclosures */
+    .pillar-card, .package-card, .event-item {
+      background: var(--white-pure);
+      transition: var(--transition-fluid);
+      border-radius: 32px;
+      padding: 3rem 2.2rem;
+      height: 100%;
+      border: 1px solid var(--border-thin);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card:hover, .package-card:hover, .event-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium-lg);
+      border-color: rgba(224, 83, 60, 0.15);
+    }
+
+    .pillar-card i, .package-card i {
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      background: rgba(224, 83, 60, 0.06);
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      transition: var(--transition-fluid);
+    }
+    .pillar-card:hover i, .package-card:hover i {
+      background: var(--terracotta);
+      color: var(--white-pure);
+    }
+
+    .event-badge {
+      background: rgba(20, 14, 10, 0.05);
+      color: var(--deep-soil);
+      font-size: 0.7rem;
+      padding: 6px 16px;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    /* Smooth Image Frame Hover Mechanics */
+    .img-grid-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .img-grid-container img {
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      object-fit: cover;
+    }
+    .img-grid-container:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Glassmorphic Interface Elements */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: var(--shadow-premium);
+    }
+
+    /* Minimalist Centralized Dark Hub Enclosure */
+    .dark-bento-section {
+      background-color: var(--deep-soil);
+      color: var(--white-pure);
+      border-radius: 50px;
+      margin: 0 20px;
+      padding: 120px 40px;
+    }
+    @media (max-width: 768px) {
+      .dark-bento-section { padding: 80px 20px; margin: 0 10px; }
+    }
+
+    /* Custom System Scrollbar Configuration */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: var(--cream-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--clay-muted);
+      border-radius: 100px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--terracotta);
+    }
+
+    /* Founder / Chef Showcase */
+    #chefs .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    #chefs .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    #chefs .section-title p {
+      color: rgba(20, 14, 10, 0.65);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .chef-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 230, 216, 0.98) 100%);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(20, 14, 10, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .chef-card img {
+      width: 45%;
+      min-width: 220px;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      border-right: 1px solid rgba(20, 14, 10, 0.04);
+    }
+    .chef-card .p-4 {
+      padding: 2.5rem 2rem;
+    }
+    .chef-card h4 {
+      font-size: 1.75rem;
+      margin-bottom: 0.85rem;
+      color: var(--deep-soil);
+    }
+    .chef-card span {
+      color: rgba(20, 14, 10, 0.75);
+      line-height: 1.8;
+      display: block;
+    }
+    @media (max-width: 991.98px) {
+      .chef-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .chef-card img {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+      }
+      .chef-card .p-4 {
+        padding: 2rem;
+      }
+    }
+
+    /* Events / Specials Interaction */
+    #specials .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    #specials .nav-tabs {
+      border: none;
+      gap: 0.75rem;
+    }
+    #specials .nav-tabs .nav-link {
+      border: 1px solid rgba(20, 14, 10, 0.08);
+      border-radius: 28px;
+      color: var(--deep-soil);
+      background: rgba(250, 246, 240, 0.95);
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      transition: var(--transition-fluid);
+      margin-bottom: 0.75rem;
+    }
+    #specials .nav-tabs .nav-link.active {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border-color: rgba(224, 83, 60, 0.25);
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    #specials .nav-tabs .nav-link:not(.active):hover {
+      background: rgba(224, 83, 60, 0.08);
+      color: var(--deep-soil);
+    }
+    #specials .tab-content {
+      padding-left: 2rem;
+    }
+    @media (max-width: 991.98px) {
+      #specials .tab-content {
+        padding-left: 0;
+        margin-top: 2rem;
+      }
+    }
+    #specials .tab-pane {
+      padding-top: 1rem;
+    }
+    #specials .tab-pane h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #specials .tab-pane p {
+      color: rgba(20, 14, 10, 0.72);
+    }
+    #specials .tab-pane .row {
+      gap: 1.5rem;
+      align-items: center;
+    }
+    #specials .tab-pane .img-fluid {
+      border-radius: 24px;
+      box-shadow: var(--shadow-premium);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Premium Smooth Header Structure -->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+  <div class="container">
+    <a class="brand" href="index.html">Dine & Pack</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="apply.html">Apply</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Enroll 2026</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Immersive Video/Imagery Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <div class="row" data-aos="fade-up" data-aos-duration="1200">
+      <div class="col-xl-9 col-lg-11">
+        <span class="sub-badge" style="background: rgba(255,255,255,0.1); color: var(--white-pure);">— Our Kitchen, Your Canvas</span>
+        <h1 class="display-3 fw-bold text-white mb-4" style="line-height: 1.1; letter-spacing: -0.04em;">Step into our vibrant kitchen.<br> Ignite <span class="fw-light fst-italic" style="color: var(--terracotta);">passion, skill & legacy</span>.</h1>
+        <p class="fs-5 opacity-90 mb-5 text-white-50" style="max-width: 700px;">We don't just teach you to cook — we equip you to thrive. A culinary degree opens doors to endless possibilities beyond the traditional restaurant kitchen.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="apply.html" class="btn-modern-primary">Start Your Journey</a>
+          <a href="courses.html" class="btn-modern-outline">Explore Programs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder / Chefs Section -->
+<section id="chefs" class="section-padding" style="background: var(--cream-dark); padding: 80px 0;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title"><h2>Our Founder</h2><p>Chef Mimi</p></div>
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-8">
+        <div class="chef-card"><img src="https://www.project100.com.ng/founder.jpeg" alt="Chef Mimi"><div class="p-4"><h4>Woman Behind The Ingredients</h4><span class="text-secondary">Embark on a culinary journey with the best Culinary Instructor in Nigeria</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events Section (Specials / Vibrant Hub) -->
+<section id="specials" class="section-padding" style="padding: 80px 0;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title"><h2>A Vibrant Hub For Events</h2><p>Palette of Events You Can Host at our Restaurant</p></div>
+    <div class="row">
+      <div class="col-lg-3"><div class="nav nav-tabs flex-column" id="eventTab" role="tablist"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Dinner Parties</button><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Sip & Paint / Book Club</button><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Birthday Celebrations</button><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">Holiday Celebrations</button><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">Game Night / Movie Night</button></div></div>
+      <div class="col-lg-9"><div class="tab-content"><div class="tab-pane fade show active" id="tab1"><div class="row"><div class="col-lg-8"><h3>Culinary Themed Feast</h3><p class="fst-italic">The restaurant sets the scene with dim lighting, dramatic music, and themed decorations. The menu and decor reflect the chosen theme, creating a truly immersive experience.</p><p>Each meal prep can be paired with a themed cocktail or wine.</p></div><div class="col-lg-4"><img src="h1.webp" class="img-fluid rounded-4" alt=""></div></div></div>
+        <div class="tab-pane fade" id="tab2"><div class="row"><div class="col-lg-8"><h3>Creative Gatherings</h3><p class="fst-italic">Unleash your inner artist with a sip and paint session. Restaurant provides canvases, brushes, paints, wine and light bites. Also cozy book club discussions with special deals.</p></div><div class="col-lg-4"><img src="h8.jpg" class="img-fluid rounded-4" alt=""></div></div></div>
+        <div class="tab-pane fade" id="tab3"><div class="row"><div class="col-lg-8"><h3>Birthday Bash</h3><p class="fst-italic">Warm ambiance, delicious food, and personalized service. Decorations, menu, and staff dressed to match the theme, creating an immersive experience.</p></div><div class="col-lg-4"><img src="h3.webp" class="img-fluid rounded-4" alt=""></div></div></div>
+        <div class="tab-pane fade" id="tab4"><div class="row"><div class="col-lg-8"><h3>Holiday Events</h3><p class="fst-italic">Thanksgiving feast, New Year's Eve party, or Halloween bash. Themed decorations, special menus, festive music. Celebrate together.</p></div><div class="col-lg-4"><img src="h4.webp" class="img-fluid rounded-4" alt=""></div></div></div>
+        <div class="tab-pane fade" id="tab5"><div class="row"><div class="col-lg-8"><h3>Fuel the fun</h3><p class="fst-italic">Movie nights, board games, video games – gather your club members. The restaurant provides games or members bring favorites.</p></div><div class="col-lg-4"><img src="h9.webp" class="img-fluid rounded-4" alt=""></div></div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<!-- Narrative Visual Space & Methodologies -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="sub-badge">Where Artistry Meets Wisdom</span>
+        <h2 class="display-5 fw-bold mb-4">More than a culinary school — a launchpad.</h2>
+        <p class="narrative-text mb-4">Dine & Pack is Abuja's premier culinary training ground, fusing deep culinary fundamentals with modern entrepreneurial thinking. Our warm and supportive atmosphere fosters collaboration, creativity, and lifelong friendships. Learn from experienced chefs, bounce ideas off peers, and build a network that will propel you.</p>
+        
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-4 border" style="border-color: var(--border-thin) !important;">
+              <i class="fa-regular fa-hand-peace text-center" style="color: var(--terracotta); font-size: 1.2rem; width: 24px;"></i> 
+              <span class="fw-bold small text-dark">Hands-on methodology</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-4 border" style="border-color: var(--border-thin) !important;">
+              <i class="fa-regular fa-compass text-center" style="color: var(--terracotta); font-size: 1.2rem; width: 24px;"></i> 
+              <span class="fw-bold small text-dark">Business + culinary fusion</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-4 border" style="border-color: var(--border-thin) !important;">
+              <i class="fa-regular fa-clock text-center" style="color: var(--terracotta); font-size: 1.2rem; width: 24px;"></i> 
+              <span class="fw-bold small text-dark">Flexible packages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="img-grid-container shadow-sm">
+              <img src="https://www.dineandpack.com.ng/p%20(15).jpg" style="height: 240px;" alt="culinary hands" loading="lazy">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="img-grid-container shadow-sm">
+              <img src="https://github.com/Gigx267/Dine-Park-2025/blob/main/b2.png?raw=true" style="height: 240px;" alt="pastry artistry" loading="lazy">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="img-grid-container shadow-sm">
+              <img src="https://github.com/Gigx267/Dine-Park-2025/blob/main/b5.png?raw=true" style="max-height: 260px;" alt="kitchen mentorship" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Pillars Grid Structure -->
+    <div class="row mt-5 pt-5 g-4">
+      <div class="col-12 text-center mb-4" data-aos="fade-up">
+        <span class="sub-badge">The complete curriculum</span>
+        <h3 class="display-6 fw-bold">From fundamentals to<br>entrepreneurial command</h3>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="pillar-card">
+          <i class="fa-solid fa-kitchen-set"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Culinary Fundamentals</h4>
+            <p class="small text-secondary mb-0">Knife skills, cooking methods, foundational stocks & sauces — build your culinary DNA with precision.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="pillar-card">
+          <i class="fa-solid fa-cake-candles"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Baking & Pastry Arts</h4>
+            <p class="small text-secondary mb-0">Dough chemistry, viennoiserie, cake design, sugar artistry — master decorative techniques & patisserie science.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="pillar-card">
+          <i class="fa-solid fa-globe"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Continental & Transcontinental</h4>
+            <p class="small text-secondary mb-0">Explore European classics, Middle Eastern spices, and modern African fusion — boundaryless flavor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="pillar-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">The Business Side</h4>
+            <p class="small text-secondary mb-0">Menu engineering, food costing, branding — turn passion into a thriving enterprise.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="pillar-card">
+          <i class="fa-solid fa-palette"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Plating & Decoration</h4>
+            <p class="small text-secondary mb-0">Artistic plating, chocolate work, edible flowers — the visual poetry of cuisine.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tailored Learning Packages Space -->
+<section style="background-color: var(--cream-dark); border-radius: 50px 50px 0 0;" class="section-padding">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="sub-badge">Tailored for your path</span>
+      <h2 class="display-5 fw-bold mt-2">Our Learning Packages</h2>
+      <p class="mx-auto text-secondary mt-3" style="max-width: 580px;">Choose your journey: from guided mentorship to full entrepreneurial ignition.</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="package-card">
+          <i class="fa-regular fa-handshake"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Mentorship Package</h4>
+            <p class="small text-secondary mb-0">Pair with elite industry chefs for personalized guidance, advanced leadership development, and structural refinement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="package-card">
+          <i class="fa-regular fa-building"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Apprenticeship</h4>
+            <p class="small text-secondary mb-0">Real-world immersion — work alongside operations masters inside heavy live restaurant configurations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="package-card">
+          <i class="fa-regular fa-leaf"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Healthy Chef</h4>
+            <p class="small text-secondary mb-0">Nutrient-dense systemic cooking, rigorous macro dietary planning, and mindful sustainable ingredient sourcing mechanics.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="package-card">
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Internship Program</h4>
+            <p class="small text-secondary mb-0">Highly structured premium career placements in top-tier premium Abuja kitchens, diplomatic zones, and star hotels.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="package-card">
+          <i class="fa-regular fa-chart-line"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Start Up Package</h4>
+            <p class="small text-secondary mb-0">Concept architectural formulation to physical launch: business systems building, scalable scaling, and modern food enterprise marketing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="package-card">
+          <i class="fa-regular fa-star"></i>
+          <div>
+            <h4 class="fw-bold h5 mb-3">Custom Combo</h4>
+            <p class="small text-secondary mb-0">Bespoke system modularity — select multiple core modules across all streams to craft your completely personal roadmap.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Immersive Events Hub Space -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="sub-badge">Beyond the classroom</span>
+        <h2 class="display-5 fw-bold mb-4">A Vibrant Hub For Events</h2>
+        <p class="narrative-text mb-4">Our restaurant space transforms into an organic cultural theater. From premium intimate dinner parties to immersive experiential feasts, we craft unforgettable multi-sensory stories. The space dictates the mood through spatial lighting orchestration, cinematic audio setups, and customized theme modifications.</p>
+        <div class="mt-4"><a href="contact.html" class="btn-modern-primary">Host Your Event →</a></div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="bg-white p-5 shadow-sm rounded-5 border border-light glass-card">
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="event-badge">Dinner Parties</span><span class="event-badge">Sip & Paint</span><span class="event-badge">Celebrations</span>
+            <span class="event-badge">Holiday Feasts</span><span class="event-badge">Game Nights</span><span class="event-badge">Cocktail Pairings</span>
+          </div>
+          <p class="fst-italic fw-semibold mb-4" style="color: var(--terracotta); font-size: 1.1rem; line-height: 1.4;">“Immersive, dramatic, and delicious — our restaurant environment becomes your live performance stage.”</p>
+          <hr class="opacity-5">
+          <div class="row g-3 mt-2 text-dark small fw-bold">
+            <div class="col-6"><i class="fa-regular fa-champagne-glasses me-2 text-secondary"></i> Wine & dinner galas</div>
+            <div class="col-6"><i class="fa-regular fa-mask me-2 text-secondary"></i> Masquerade nights</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- High-Contrast Alumni Matrix Section -->
+<section id="events" class="section-padding style-holder" style="background-color: var(--white-pure);">
+  <div class="container" data-aos="fade-up">
+    <div class="text-center mb-5">
+      <span class="sub-badge">A network of Chefs</span>
+      <h2 class="display-5 fw-bold mt-2">Why Hire a Dine & Pack Alumnus</h2>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="event-item">
+          <div class="img-grid-container mb-4 shadow-sm" style="border-radius: 20px;">
+            <img src="https://www.dineandpack.com.ng/p%20(21).JPG" style="height: 220px;" alt="alumni">
+          </div>
+          <h4 class="fw-bold h5 mb-3">Proven Architectural Skills</h4>
+          <p class="small text-secondary mb-0">Our alumni have verified structural mastery over advanced modern systems, planetary knife layouts, and rigorous multi-tier kitchen lines.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="event-item">
+          <div class="img-grid-container mb-4 shadow-sm" style="border-radius: 20px;">
+            <img src="https://www.dineandpack.com.ng/p%20(3).png" style="height: 220px;" alt="work ethic">
+          </div>
+          <h4 class="fw-bold h5 mb-3">Reliability & Command</h4>
+          <p class="small text-secondary mb-0">Engineered to excel under real pressure configurations, bringing elite communication, consistency, and professional punctuality frameworks.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="event-item">
+          <div class="img-grid-container mb-4 shadow-sm" style="border-radius: 20px;">
+            <img src="https://www.dineandpack.com.ng/p%20(8).png" style="height: 220px;" alt="versatility">
+          </div>
+          <h4 class="fw-bold h5 mb-3">High Structural Versatility</h4>
+          <p class="small text-secondary mb-0">From complex high-concept plating galleries to massive multi-cover enterprise setups, our graduates transition smoothly between formats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contemporary Centered Dark Action Matrix -->
+<section class="my-5">
+  <div class="container">
+    <div class="dark-bento-section text-center" data-aos="zoom-in">
+      <h2 class="display-4 fw-bold text-white mb-4" style="letter-spacing: -0.04em;">Ignite your future.<br>Thrive beyond the stove.</h2>
+      <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 720px;">Whether you dream of a flagship restaurant, a pastry atelier, or a food empire — Dine & Pack gives you the tools, mentorship, and community to build it.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="apply.html" class="btn-modern-primary">Apply for 2026</a>
+        <a href="contact.html" class="btn-modern-outline">Talk to Admissions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT100 Structural Bento Spaces -->
+<section class="section-padding" style="background: var(--cream);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="sub-badge">✨ Empowering Futures ✨</span>
+      <h2 class="display-5 fw-bold mt-2">PROJECT100: Igniting a Thousand Dreams</h2>
+      <p class="col-lg-8 mx-auto mt-4 text-secondary narrative-text">Years in the making — a signature human transformation initiative under <strong>Dine & Pack Culinary Training</strong> designed to empower underserved teens & young adults with concrete execution metrics, professional mentorship, and industrial enterprise tooling.</p>
+    </div>
+    
+    <!-- Micro Bento Images Block -->
+    <div class="row g-4 mb-5" data-aos="fade-up">
+      <div class="col-md-8">
+        <div class="img-grid-container shadow-sm" style="border-radius: 32px;">
+          <img src="https://www.dineandpack.com.ng/forms/sep7-30.jpg" style="height: 380px;" alt="PROJECT100">
+        </div>
+      </div>
+      <div class="col-md-4 d-flex flex-column gap-4">
+        <div class="img-grid-container shadow-sm" style="border-radius: 24px; flex: 1;">
+          <img src="https://www.dineandpack.com.ng/forms/sep7-13.jpg" class="h-100" alt="empower">
+        </div>
+        <div class="img-grid-container shadow-sm" style="border-radius: 24px; flex: 1;">
+          <img src="https://www.dineandpack.com.ng/forms/sep7-15.jpg" class="h-100" alt="books">
+        </div>
+      </div>
+    </div>
+    
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h3 class="display-6 fw-bold mb-4">A new course in life.</h3>
+        <p class="narrative-text mb-4">Targeting young dreamers who lack systemic privilege. Through continuous hands-on mastery, foundational bookkeeping, brand setup instructions, and lifecycle tracking, we rebuild foundational security lines.</p>
+        <div class="p-4 glass-card border-start border-top-0 border-bottom-0 border-end-0" style="border-left: 4px solid var(--terracotta) !important;">
+          <p class="mb-0 fst-italic fw-semibold text-dark text-opacity-85" style="line-height: 1.5;">“Our girls can stand on their own without being lured into unthinkable acts. Our boys become enterprising and live a crime-free life.”</p>
+          <footer class="mt-3 small fw-bold text-secondary">— PROJECT100 Founding Team</footer>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="img-grid-container shadow-sm" style="border-radius: 24px;">
+              <img src="https://www.dineandpack.com.ng/forms/sep7-43.jpg" style="height: 180px;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="img-grid-container shadow-sm" style="border-radius: 24px;">
+              <img src="https://www.dineandpack.com.ng/forms/sep7-44.jpg" style="height: 180px;">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="img-grid-container shadow-sm" style="border-radius: 24px;">
+              <img src="https://www.dineandpack.com.ng/forms/sep7-45.jpg" style="max-height: 200px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5 pt-5 border-top">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <p class="fst-italic fs-4 display-font fw-semibold mb-4" style="letter-spacing: -0.02em;">“Education is the key to unlocking a bright future — Break the chains of inequality. Together, we can make a difference.”</p>
+          <a href="apply.html" class="btn-outline-soil">Join the movement →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Footnote Enclosure Area -->
+<footer class="bg-white border-top py-5">
+  <div class="container text-center text-secondary small">
+    <p class="mb-0 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. All rights reserved. Master your craft, forge your future.</p>
+  </div>
+</footer>
+
+<!-- Core Engineering Logic Bundles -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ 
+    duration: 1000, 
+    easing: 'ease-out-quint', 
+    once: true, 
+    offset: 40 
+  });
+  
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.custom-nav');
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+</body>
+</html>

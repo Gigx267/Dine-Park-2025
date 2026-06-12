@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Courses — Dine & Pack | Culinary Arts Curriculum, Abuja</title>
+  <meta name="description" content="Explore Dine & Pack's intensive culinary courses: full culinary arts, pastry, African cuisine, mixology, kids classes & more. Hands‑on training in Abuja.">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Fonts & Core Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Frameworks & Icon Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-premium: 0 8px 32px rgba(20, 14, 10, 0.02), 0 2px 6px rgba(20, 14, 10, 0.01);
+      --shadow-premium-lg: 0 32px 64px -16px rgba(20, 14, 10, 0.08);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Premium Sticky Navigation (same identity as about page) */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+      box-shadow: var(--shadow-premium);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+        box-shadow: var(--shadow-premium-lg);
+      }
+      .nav-link {
+        color: var(--white-pure) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+    }
+
+    /* Hero Section */
+    .courses-hero {
+      min-height: 70vh;
+      background: linear-gradient(125deg, rgba(20,14,10,0.88) 0%, rgba(20,14,10,0.6) 100%), 
+                  url('https://github.com/Gigx267/Dine-Park-2025/blob/main/b3.png?raw=true') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      position: relative;
+      background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+      .courses-hero { background-attachment: scroll; min-height: 60vh; }
+    }
+
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+    .btn-outline-soil {
+      border: 1.5px solid var(--deep-soil);
+      background: transparent;
+      color: var(--deep-soil);
+      padding: 14px 36px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-soil:hover {
+      background: var(--deep-soil);
+      color: var(--cream);
+      transform: translateY(-3px);
+    }
+
+    .section-padding {
+      padding: 120px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 80px 0; }
+    }
+
+    /* Course Card Premium */
+    .course-card {
+      background: var(--white-pure);
+      border-radius: 32px;
+      padding: 2rem 1.8rem;
+      transition: var(--transition-fluid);
+      height: 100%;
+      border: 1px solid var(--border-thin);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium-lg);
+      border-color: rgba(224, 83, 60, 0.2);
+    }
+    .course-price {
+      font-family: 'Syne', monospace;
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: var(--terracotta);
+      letter-spacing: -0.02em;
+    }
+    .course-duration {
+      display: inline-block;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .course-icon {
+      font-size: 2rem;
+      color: var(--terracotta);
+      margin-bottom: 1.2rem;
+    }
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .feature-list li {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 48px;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    footer {
+      background-color: var(--white-pure);
+      border-top: 1px solid var(--border-thin);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: var(--cream-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--clay-muted);
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation identical to about page (consistent) -->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+  <div class="container">
+    <a class="brand" href="index.html">Dine & Pack</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="courses.html" style="color: var(--terracotta);">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="apply.html">Apply</a></li>
+          <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Enroll 2026</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section: Your Culinary Curriculum -->
+<section class="courses-hero">
+  <div class="container">
+    <div class="row" data-aos="fade-up" data-aos-duration="1200">
+      <div class="col-xl-8 col-lg-10">
+        <span class="sub-badge" style="background: rgba(255,255,255,0.12); color: var(--white-pure);">Your Culinary Curriculum</span>
+        <h1 class="display-3 fw-bold text-white mb-4" style="line-height: 1.1;">Master the art of cuisine.<br>From foundations to <span class="fw-light fst-italic" style="color: var(--terracotta);">fine dining.</span></h1>
+        <p style="color: var(--cream);">Explore intensive, hands‑on courses designed for aspiring chefs, entrepreneurs, and young talents. Get mentorship, real kitchen labs & industry certification.</p>
+        <div>
+        
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Choose your path section -->
+<section class="section-padding" id="programs">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="sub-badge">choose your path</span>
+      <h2 class="display-5 fw-bold mt-2">Our Signature Programs</h2>
+      <p class="mx-auto text-secondary mt-3" style="max-width: 680px;">In-depth training, real kitchen labs, and mentorship by top chefs. Pick the course that fuels your dream.</p>
+    </div>
+
+    <div class="row g-5">
+      <!-- Full Culinary Arts Programme -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="course-card">
+          <i class="fas fa-utensils course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Full Culinary Arts Programme</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦500k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 3 months</span>
+          </div>
+          <p class="small text-secondary">Complete culinary immersion: classical techniques, kitchen management, global cuisines & advanced plating.</p>
+          <ul class="feature-list">
+            <li>Certificate + industry exposure</li>
+            <li>Mentorship by executive chefs</li>
+            <li>Live-fire & pantry mastery</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Enroll →</a></div>
+        </div>
+      </div>
+      <!-- Pastry & Baking Essentials -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="course-card">
+          <i class="fas fa-bread-slice course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Pastry & Baking Essentials</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦300k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Breads, laminated dough, tarts, custards & foundational patisserie. Perfect for artisan bakers.</p>
+          <ul class="feature-list">
+            <li>Hands-on lab</li>
+            <li>Viennoiserie techniques</li>
+            <li>Formula balancing</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Secure spot →</a></div>
+        </div>
+      </div>
+      <!-- Cakes & Sugar Arts -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="course-card">
+          <i class="fas fa-cake-candles course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Cakes & Sugar Arts</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦350k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Layered cakes, ganache, fondant sculpting, sugar flowers & celebration cake design.</p>
+          <ul class="feature-list">
+            <li>Decorative mastery</li>
+            <li>Contemporary wedding cake engineering</li>
+            <li>Chocolate décor</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Enroll →</a></div>
+        </div>
+      </div>
+      <!-- African Culinary Arts Programme -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="course-card">
+          <i class="fas fa-drumstick-bite course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">African Culinary Arts Programme</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦250k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Celebrate heritage: West African staples, aromatic spices, traditional techniques with modern refinement.</p>
+          <ul class="feature-list">
+            <li>Indigenous & fusion</li>
+            <li>Regional spice blending</li>
+            <li>Street-to-fine dining reimagined</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Reserve →</a></div>
+        </div>
+      </div>
+      <!-- Continental & Transcontinental Arts -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="course-card">
+          <i class="fas fa-globe-americas course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Continental & Transcontinental Arts</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦380k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 2 Months</span>
+          </div>
+          <p>French, Italian, Mediterranean, Middle Eastern & Asian fusions — master global flavour profiles.</p>
+          <ul class="feature-list">
+            <li>International techniques</li>
+            <li>Sauce architecture + wine pairings</li>
+            <li>Cross-cultural plating</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Apply →</a></div>
+        </div>
+      </div>
+      <!-- Barbecue & Grills -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="course-card">
+          <i class="fas fa-fire course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Barbecue & Grills</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦260k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Smoking, fire management, marinades, dry rubs and outdoor live-fire cooking.</p>
+          <ul class="feature-list">
+            <li>Smoke & flame expert</li>
+            <li>Grill setup & butchery basics</li>
+            <li>Competition style BBQ</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Reserve pit →</a></div>
+        </div>
+      </div>
+      <!-- Desserts (Signature) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+        <div class="course-card">
+          <i class="fas fa-ice-cream course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Desserts (Signature)</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦230k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Plated desserts, mousses, sorbets, chocolate work & modern pastry composition.</p>
+          <ul class="feature-list">
+            <li>Sweet artistry</li>
+            <li>Dessert menu engineering</li>
+            <li>Restaurant-style finishing</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Indulge →</a></div>
+        </div>
+      </div>
+      <!-- Mixology Class (30 Drinks) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="course-card">
+          <i class="fas fa-cocktail course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Mixology Class (30 Drinks)</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦200k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 2 Weeks</span>
+          </div>
+          <p>Cocktail theory, flair, classic recipes, signature mixes, bar setup. Includes 30 premium recipes.</p>
+          <ul class="feature-list">
+            <li>Beverage certification</li>
+            <li>Spirit knowledge & garnishes</li>
+            <li>Bartending business basics</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Shake & stir →</a></div>
+        </div>
+      </div>
+      <!-- Mini Chef Package (Age 5-12) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+        <div class="course-card">
+          <i class="fas fa-child course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Mini Chef Package</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦60k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> Age 5-12</span>
+          </div>
+          <p>Fun, safe cooking basics — baking, simple meals, kitchen confidence for young food explorers.</p>
+          <ul class="feature-list">
+            <li>Kids culinary workshop</li>
+            <li>Parent-child demo</li>
+            <li>Safety & creativity focus</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Enroll junior →</a></div>
+        </div>
+      </div>
+      <!-- Stripling Package (Age 13-19) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="course-card">
+          <i class="fas fa-user-graduate course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Stripling Package</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦100k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> Age 13-19</span>
+          </div>
+          <p>Youth culinary program: knife skills, balanced nutrition, global cuisines and menu planning.</p>
+          <ul class="feature-list">
+            <li>Teen chef preparation</li>
+            <li>Career exploration in hospitality</li>
+            <li>Team cook-offs</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Apply teen →</a></div>
+        </div>
+      </div>
+      <!-- Short Courses -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="550">
+        <div class="course-card">
+          <i class="fas fa-clock course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Short Courses</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦80k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Week</span>
+          </div>
+          <p>Intensive short modules: sauces, pastry basics, healthy cooking, or seafood — tailor your week.</p>
+          <ul class="feature-list">
+            <li>Quick skill sharpening</li>
+            <li>Evening & weekend options</li>
+            <li>Certificate of attendance</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Choose module →</a></div>
+        </div>
+      </div>
+      <!-- Amarya Package -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="course-card">
+          <i class="fas fa-gem course-icon"></i>
+          <h3 class="h4 fw-bold mb-2">Amarya Package</h3>
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <span class="course-price">₦280k</span>
+            <span class="course-duration"><i class="far fa-calendar-alt me-1"></i> 1 Month</span>
+          </div>
+          <p>Signature luxury course: fine dining presentation, culinary business & elevated event catering.</p>
+          <ul class="feature-list">
+            <li>Premium mentorship</li>
+            <li>Plating theatre & storytelling</li>
+            <li>Private chef brand building</li>
+          </ul>
+          <div class="mt-auto"><a href="apply.html" class="btn-outline-soil w-100 text-center" style="padding: 12px;">Elevate →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Important note: All programs inclusions -->
+    <div class="glass-morphism mt-5 p-4 p-md-5 text-center" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <i class="fas fa-award text-terracotta fs-1 mb-3" style="color: var(--terracotta);"></i>
+          <h4 class="fw-bold mb-3">All programs include:</h4>
+          <p class="mb-0 text-secondary">Hands-on training in state-of-the-art kitchens, modern culinary facilities, mentorship by top chefs, and a certificate of completion. Small class sizes — book your seat today.</p>
+          <div class="mt-4"><a href="apply.html" class="btn-modern-primary">Secure your spot →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why choose us / small accolade section -->
+<section class="section-padding" style="background-color: var(--cream-dark);">
+  <div class="container text-center">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-4" data-aos="fade-up">
+        <i class="fas fa-chalkboard-user fs-1 mb-3" style="color: var(--terracotta);"></i>
+        <h5 class="fw-bold">Industry-Led Mentorship</h5>
+        <p class="small text-secondary">Learn from executive chefs with decades of global kitchen command.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-kitchen-set fs-1 mb-3" style="color: var(--terracotta);"></i>
+        <h5 class="fw-bold">Modern Labs & Equipment</h5>
+        <p class="small text-secondary">Every class uses professional-grade stations, from induction to woodfire.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-briefcase fs-1 mb-3" style="color: var(--terracotta);"></i>
+        <h5 class="fw-bold">Career & Entrepreneurship</h5>
+        <p class="small text-secondary">From launching food businesses to premium kitchen placements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 border-top">
+  <div class="container text-center text-secondary small">
+    <p class="mb-0 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. Master your craft, forge your future.</p>
+    <p class="mt-2 mb-0"><a href="apply.html" class="text-decoration-none text-terracotta">Enroll now</a> — Limited seats per cohort.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 40 });
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.custom-nav');
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+</body>
+</html>
