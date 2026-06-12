@@ -1,472 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dine & Pack | Culinary Forge — Renewed Hope Scholarship</title>
+  <meta name="description" content="Abuja's premier culinary school blending mastery, creativity, and entrepreneurship — Apply for the Renewed Hope Culinary Scholarship.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-  <title>Dine and  Pack </title>
-  <link rel="icon" type="image/x-icon" href="logo.png">
-  <meta content="ABUJA'S PREMIER CULINARY TRAINING SCHOOL & RESTAURANT " name="description">
-  <meta content="We are passionate about providing high-quality culinary education to aspiring chefs and home cooks alike" name="keywords">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Favicons -->
-  <link href="" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    :root {
+      --terracotta: #E0533C;
+      --terracotta-deep: #B53622;
+      --clay-muted: #A39081;
+      --olive: #4E5E42;
+      --cream: #FAF6F0;
+      --cream-dark: #F0E6D8;
+      --deep-soil: #140E0A;
+      --white-pure: #FFFFFF;
+      --border-thin: rgba(20, 14, 10, 0.06);
+      --transition-fluid: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-soil);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    /* Navbar */
+    .custom-nav {
+      background: transparent;
+      transition: var(--transition-fluid);
+      padding: 32px 0;
+      z-index: 1050;
+    }
+    .custom-nav.scrolled {
+      background: rgba(250, 246, 240, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(20, 14, 10, 0.04);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white-pure);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .brand {
+      color: var(--deep-soil);
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      padding: 8px 0;
+    }
+    .custom-nav.scrolled .nav-link {
+      color: rgba(20, 14, 10, 0.7);
+    }
+    .nav-link:hover, .custom-nav.scrolled .nav-link:hover {
+      color: var(--terracotta);
+    }
+    .navbar-toggler {
+      padding: 0;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .navbar-toggler span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-pure);
+      transition: var(--transition-fluid);
+    }
+    .custom-nav.scrolled .navbar-toggler span {
+      background-color: var(--deep-soil);
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(20, 14, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 28px;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+      .nav-link {
+        color: var(--white-pure) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+    }
 
+    /* Buttons */
+    .btn-modern-primary {
+      background: var(--terracotta);
+      color: var(--white-pure);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(224, 83, 60, 0.15);
+    }
+    .btn-modern-primary:hover {
+      background: var(--deep-soil);
+      color: var(--white-pure);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.2);
+    }
+    .btn-modern-outline {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white-pure);
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: var(--transition-fluid);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-modern-outline:hover {
+      background: var(--white-pure);
+      color: var(--deep-soil);
+      border-color: var(--white-pure);
+      transform: translateY(-4px);
+    }
 
+    .sub-badge {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--terracotta);
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      background: rgba(224, 83, 60, 0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(20,14,10,0.75) 0%, rgba(20,14,10,0.4) 60%, var(--cream) 100%),
+                  url('https://www.dineandpack.com.ng/assets/img/p%20(21).JPG') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: var(--white-pure);
+      padding-top: 140px;
+    }
+    .hero-title {
+      font-size: calc(2.2rem + 3.8vw);
+      line-height: 1.05;
+      color: var(--white-pure);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span {
+      color: var(--terracotta);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .section-padding {
+      padding: 140px 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: 90px 0; }
+    }
+
+    /* Scholarship Form Container — premium integration */
+    .scholarship-form-wrapper {
+      background: var(--white-pure);
+      border-radius: 48px;
+      box-shadow: 0 40px 70px rgba(20, 14, 10, 0.08);
+      transition: var(--transition-fluid);
+      overflow: hidden;
+      border: 1px solid rgba(20, 14, 10, 0.04);
+    }
+
+    /* Custom form styling to match scholarship aesthetic but unified with brand */
+    .scholarship-form-wrapper label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      color: var(--deep-soil);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .scholarship-form-wrapper input,
+    .scholarship-form-wrapper select,
+    .scholarship-form-wrapper textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 20px;
+      border: 1px solid #e2e0db;
+      background: #fefcf9;
+      transition: 0.25s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .scholarship-form-wrapper input:focus,
+    .scholarship-form-wrapper select:focus,
+    .scholarship-form-wrapper textarea:focus {
+      border-color: var(--terracotta);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(224,83,60,0.1);
+      background: white;
+    }
+    .scholarship-form-wrapper .checkbox-custom {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .scholarship-form-wrapper .checkbox-custom input {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+    }
+    .required-star::after {
+      content: " *";
+      color: var(--terracotta);
+      font-weight: bold;
+    }
+    .small-note {
+      font-size: 0.7rem;
+      color: #6b5a4e;
+      margin-top: 6px;
+    }
+    .form-status {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .form-status.success { color: #2b6e3c; }
+    .form-status.error { color: #c0392b; }
+
+    .interactive-feature-card {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(20, 14, 10, 0.02);
+      transition: var(--transition-fluid);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .interactive-feature-card:hover {
+      background: var(--white-pure);
+      box-shadow: 0 20px 40px rgba(20, 14, 10, 0.04);
+      transform: translateY(-3px);
+    }
+    .interactive-feature-card i {
+      font-size: 1.25rem;
+      color: var(--terracotta);
+      background: rgba(224, 83, 60, 0.08);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      transition: var(--transition-fluid);
+    }
+    .interactive-feature-card:hover i {
+      background: var(--terracotta);
+      color: var(--white-pure);
+    }
+
+    .dark-bento-section {
+      background-color: var(--deep-soil);
+      color: var(--white-pure);
+      border-radius: 50px;
+      margin: 0 20px;
+      padding: 120px 40px;
+    }
+    @media (max-width: 768px) {
+      .dark-bento-section { padding: 80px 20px; margin: 0 10px; }
+    }
+
+    footer {
+      background: var(--white-pure);
+      padding: 80px 0 40px 0;
+      border-top: 1px solid var(--border-thin);
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-phone d-flex align-items-center"><span>08087630000</span></i>
-        <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 8AM - 8PM</span></i>
-      </div>
-
-      <div class="languages d-none d-md-flex align-items-center">
-        <ul>
-          <li>ORIENTAL GRADEN ACCRA STREET WUSE ZONE 5 ABUJA </li>
-          <li><a href="#"></a></li>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+    <div class="container">
+      <a class="brand" href="#">Dine & Pack</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-lg-4 gap-3">
+           
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="Apply.html">Scholarship </a></li>
+              <li class="nav-item"><a class="nav-link" href="chef.html">Chef on Demand </a></li>
+     
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
+          <li class="nav-item ms-lg-2"><a href="Apply.html" class="btn-modern-primary" style="padding: 10px 24px;">Apply Now</a></li>
         </ul>
       </div>
     </div>
-  </div>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">  </a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html">Courses</a></li>
-          
-          <li><a class="nav-link scrollto" href="index.html">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="events.html">Host Events With Us </a></li>
-        
-          <li><a class="nav-link scrollto" href="index.html">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
-
-    </div>
-  </header><!-- End Header -->
-
-  
-
- 
- 
- 
- <!-- ======= Gallery Section ======= -->
-  <section id="gallery" class="gallery">
-
-	<div class="container" data-aos="fade-up">
-	  <div class="section-title">
-		<h2>Gallery</h2>
-		<p > <a href="Minichef.html"   >View   Mini Chef </a>     </p>
-		<p   > <a href="inter.html"   > View Inter School Competition</a>     </p>
-	  </div>
-	</div>
-
-	<div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-	  <div class="row g-0">
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_204.JPG" class="gallery-lightbox" data-gall="gallery-item">
-			  <img src="Inter school comp/Inter school Comp_204.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_222.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_222.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_252.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_252.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-
-
-
-
-
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_259.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_259.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_164.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_164.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_165.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_165.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_184.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_186.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_257.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_257.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="col-lg-3 col-md-4">
-			<div class="gallery-item">
-			  <a href="Inter school comp/Inter school Comp_253.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				  <img src="Inter school comp/Inter school Comp_253.JPG" alt="" class="img-fluid">
-			  </a>
-			</div>
-		  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_240.JPG" class="gallery-lightbox" data-gall="gallery-item">
-			
-			
-			  <img src="Inter school comp/Inter school Comp_240.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_215.JPG" class="gallery-lightbox" data-gall="gallery-item">
-			
-				<img src="Inter school comp/Inter school Comp_215.JPG " alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_176.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_176.JPG " alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_174.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_174.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_165.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_165.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_156.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_156.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-		<div class="col-lg-3 col-md-4">
-		  <div class="gallery-item">
-			<a href="Inter school comp/Inter school Comp_145.JPG" class="gallery-lightbox" data-gall="gallery-item">
-				<img src="Inter school comp/Inter school Comp_145.JPG" alt="" class="img-fluid">
-			</a>
-		  </div>
-		</div>
-
-	  </div>
-	  <div >
-		<a href="Inter school comp/Inter school Comp_271.JPG" class="gallery-lightbox" data-gall="gallery-item">
-			<img src="Inter school comp/Inter school Comp_164.JPG" alt="" class="img-fluid">
-	  </div>
-	</div>
-  </section><!-- End Gallery Section -->
- <!-- ======= Footer ======= -->
- <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Dine & Pack </h3>
-              <p>
-                14B ORIENTAL GARDEN ACCRA STREET WUSE ZONE 5 ABUJA
-                <br><br>
-                <strong>Phone:</strong> 08087630000<br>
-                <strong>Email:</strong> Dine&Pack@Gmail.com <br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-               
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 col-lg-11" data-aos="fade-up" data-aos-duration="1200">
+          <span class="sub-badge" style="background: rgba(255,255,255,0.1); color: var(--white-pure);">Renewed Hope Culinary Scholarship</span>
+          <h1 class="hero-title">Rooted in Cooking.<br>Defined by <span>Tradition</span>.</h1>
+          <p class="fs-5 opacity-90 mb-5 text-white-50" style="max-width: 680px;">
+             Turn your passion into profession — applications open now.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#scholarship-app" class="btn-modern-primary">Apply for Scholarship</a>
+            <a href="#programs" class="btn-modern-outline">Explore Programs</a>
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sign Up </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Newsletter</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Classes </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of Packages  </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Class policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="Dine&Park.html">About </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="Dine&Park.html">Classes </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="Dine&Park.html">Packages </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="Dine&Park.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>  </p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- About Section shortened but kept for coherence -->
+  <section id="about" class="section-padding">
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Dine & Pack </span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        
-        Designed by <a href="">Kelechi Designs</a>
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="image-frame shadow-lg position-relative rounded-4 overflow-hidden">
+            <img src="https://www.dineandpack.com.ng/assets/img/p%20(5).jpg" class="img-fluid w-100" style="object-fit: cover; min-height: 460px;" alt="Culinary workshop">
+            <div class="floating-context-badge" style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); padding: 12px 24px; border-radius: 40px;">
+              <span class="small fw-bold"><i class="fa-regular fa-star me-1 text-terracotta"></i> Partnership with NCDC</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 ps-xl-5" data-aos="fade-left">
+          <span class="sub-badge">Renewed Hope Initiative</span>
+          <h2 class="display-5 fw-bold mb-4">Transform Your Future in Culinary Arts</h2>
+          <div class="mb-4">
+            <p class="brand-blockquote ps-4 fst-italic border-start border-3 border-terracotta mb-0">“A fully sponsored scholarship to unlock your culinary potential — no tuition fees, just dedication.”</p>
+          </div>
+          <p class="mb-4">Dine & Pack, in collaboration with the North Central Development Commission, presents the Renewed Hope Culinary Scholarship. Selected candidates receive world-class training at our Abuja culinary centre, mentorship from master chefs, and entrepreneurial pathways.</p>
+          <div class="row g-3">
+            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-hand-holding-heart"></i><span class="small fw-bold">Fully Funded</span></div></div>
+            <div class="col-sm-6"><div class="interactive-feature-card"><i class="fa-solid fa-kitchen-set"></i><span class="small fw-bold">Professional Gear Included</span></div></div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Program Bento Grid -->
+  <section id="programs" class="section-padding" style="background-color: var(--cream-dark); border-radius: 50px 50px 0 0;">
+    <div class="container">
+      <div class="mb-5 pb-2" data-aos="fade-up">
+        <span class="sub-badge">Scholarship Tracks</span>
+        <h2 class="display-5 fw-bold mt-2">Signature Paths Covered</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
+            <h4 class="fw-bold mb-3">Grand Diploma in Culinary Arts</h4>
+            <p class="text-secondary small">Classical techniques, global gastronomy, kitchen management — 6 months intensive.</p>
+            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
+            <h4 class="fw-bold mb-3">Patisserie & Baking Mastery</h4>
+            <p class="text-secondary small">Pastry science, chocolate work, artisan bread — 3 months focused lab.</p>
+            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-organic-bento bg-white p-4 rounded-4 h-100 shadow-sm">
+            <h4 class="fw-bold mb-3">African Fusion & Modern Nigerian</h4>
+            <p class="text-secondary small">Indigenous ingredients, contemporary plating, heritage revival — 2 months.</p>
+            <div class="mt-3"><span class="badge bg-terracotta text-white px-3 py-2 rounded-pill">Full Scholarship</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- MAIN SCHOLARSHIP APPLICATION FORM (Renewed Hope Culinary Scholarship) with existing formspree + all fields integrated -->
+  <section id="scholarship-app" class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="scholarship-form-wrapper p-4 p-md-5">
+            <div class="text-center mb-4">
+              <span class="sub-badge">Limited Slots — Apply Now</span>
+              <h2 class="display-6 fw-bold mt-2">Renewed Hope Culinary Scholarship Application</h2>
+              <p class="text-secondary">North Central Development Commission x Dine & Pack Culinary Centre — Abuja residents or those able to commute. Fully funded training. <strong>Deadline: rolling admissions</strong></p>
+            </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+            <!-- same formspree endpoint: https://formspree.io/f/mreanygq -->
+            <form id="scholarship-form" action="https://formspree.io/f/mreanygq" method="POST">
+              <!-- Personal Information group -->
+              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Personal Information</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-12">
+                  <label class="required-star">Full Name</label>
+                  <input type="text" name="Full Name" placeholder="e.g., Adeola O. Raji" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Phone Number (WhatsApp preferred)</label>
+                  <input type="tel" name="Phone Number" placeholder="080XXXXXX" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Email Address</label>
+                  <input type="email" name="Email" placeholder="hello@example.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="required-star">Residential Address (Abuja residents only)</label>
+                  <textarea name="Residential Address" rows="2" placeholder="Enter your full address, area, landmark" required></textarea>
+                  <div class="small-note">Note: This program is held in Abuja. You must be local or able to travel.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">State of Origin</label>
+                  <select name="State of Origin" required>
+                    <option value="" disabled selected>Select state</option>
+                    <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option>
+                    <option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT</option><option>Gombe</option>
+                    <option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+                    <option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option>
+                    <option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option><option>Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label>If Other, please specify</label>
+                  <input type="text" name="Other State" placeholder="Specify">
+                </div>
+                <div class="col-md-6">
+                  <label class="required-star">Age</label>
+                  <input type="number" name="Age" min="16" max="60" required>
+                </div>
+              </div>
 
+              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Education & Background</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-12">
+                  <label class="required-star">Highest Level of Education</label>
+                  <select name="Highest Education Level" required>
+                    <option value="">Select</option><option>SSCE / WAEC / NECO</option><option>National Diploma</option><option>Higher National Diploma</option><option>Bachelor's Degree</option><option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label>Prior Cooking / Culinary Experience (briefly describe)</label>
+                  <textarea name="Prior Culinary Experience" rows="2" placeholder="If none, write 'No formal experience but passion for cooking'"></textarea>
+                </div>
+              </div>
+
+              <h4 class="fw-bold mt-3 mb-3" style="color: var(--deep-soil);">Your Motivation (Required)</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-12">
+                  <label class="required-star">Why are you applying for this scholarship?</label>
+                  <textarea name="Why are you applying" rows="3" required></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label class="required-star">What do you plan to use this training for?</label>
+                  <textarea name="What will you use the training for" rows="3" required></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label class="required-star">How did you hear about this program?</label>
+                  <textarea name="How did you hear about it" rows="2" required></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label class="required-star">Why do you deserve to be considered?</label>
+                  <textarea name="Why you deserve this scholarship" rows="3" required></textarea>
+                </div>
+                <div class="col-md-12">
+                  <label>Your future goals in culinary/food entrepreneurship</label>
+                  <textarea name="Future career goals" rows="2" placeholder="e.g., open a restaurant, catering business, etc."></textarea>
+                </div>
+              </div>
+
+              <div class="checkbox-custom">
+                <input type="checkbox" id="agreeCheckbox" name="Agreement" required>
+                <label for="agreeCheckbox" class="small">I confirm that all information provided is true and accurate. I understand this is an application and not a guarantee of selection.</label>
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" id="formSubmitBtn" class="btn-modern-primary w-100 w-md-auto" style="padding: 14px 48px;">Submit My Application</button>
+                <div id="my-form-status" class="form-status mt-3"></div>
+              </div>
+            </form>
+
+            <!-- WhatsApp support cue (mirroring the secondary message but native to form) -->
+            <div class="mt-5 pt-3 text-center border-top">
+              <div class="culinary-section d-inline-block w-100" style="max-width: 100%; background: #f6f3ef; border-radius: 32px; padding: 18px;">
+                <p class="mb-2 fw-semibold">📞 Have questions about the scholarship? Reach out to our support team</p>
+                <a href="https://wa.me/2348087630000" class="whatsapp-btn" style="background:#25D366; display:inline-block; padding: 12px 30px; border-radius: 40px; color:white; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="cta-banner" class="my-5">
+    <div class="container">
+      <div class="dark-bento-section text-center" data-aos="zoom-in">
+        <span class="sub-badge" style="background: rgba(255,255,255,0.06); color: var(--white-pure);">Limited Cohort</span>
+        <h2 class="display-4 fw-bold text-white mt-3 mb-4">Design the Future of Taste</h2>
+        <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 650px;">Culinary entrepreneurs turn passion into profit — this scholarship is your launchpad. Apply before slots fill.</p>
+        <a href="#scholarship-app" class="btn-modern-primary">Apply for Scholarship →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center text-secondary small">
+      <p class="mb-3 fw-medium">© 2026 Dine & Pack — Culinary Forge, Abuja. In Partnership with North Central Development Commission.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center opacity-75">
+        <span><i class="fas fa-map-marker-alt me-2" style="color: var(--terracotta);"></i>ORIENTAL GARDEN, 14B Accra Street, Wuse Zone 5, Abuja</span>
+        <span class="d-none d-md-inline">|</span>
+        <span><i class="fas fa-phone-alt me-2"></i>08087630000</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-out-quint', once: true, offset: 50 });
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.custom-nav');
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // Formspree handler exactly as required (same as original scholarship form with all fields)
+    const form = document.getElementById("scholarship-form");
+    const statusDiv = document.getElementById("my-form-status");
+    const submitBtn = document.getElementById("formSubmitBtn");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      statusDiv.innerHTML = "Submitting application...";
+      statusDiv.className = "form-status";
+      submitBtn.disabled = true;
+
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          statusDiv.innerHTML = "✅ Thanks for your submission! We'll review your application soon.";
+          statusDiv.className = "form-status success";
+          form.reset();
+        } else {
+          const responseData = await response.json();
+          if (responseData.errors) {
+            statusDiv.innerHTML = responseData.errors.map(e => e.message).join(", ");
+          } else {
+            statusDiv.innerHTML = "❌ Oops! There was a problem submitting your form.";
+          }
+          statusDiv.className = "form-status error";
+        }
+      } catch (error) {
+        statusDiv.innerHTML = "❌ Network error. Please try again.";
+        statusDiv.className = "form-status error";
+      } finally {
+        submitBtn.disabled = false;
+      }
+    }
+    form.addEventListener("submit", handleSubmit);
+  </script>
 </body>
-
 </html>
