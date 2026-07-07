@@ -179,6 +179,407 @@
     <footer class="menu-footer">
         <p>&copy; 2026 Dine & Pack. All Rights Reserved.</p>
     </footer>
+<script>
 
+    document.addEventListener("DOMContentLoaded", () => {
+    // 1. DYNAMICALLY INJECT UTILITY CONTROLS (SEARCH & LIGHT/DARK MODE TOGGLE)
+    const mainContainer = document.querySelector(".menu-container");
+    
+    const controlsHTML = `
+        <div class="controls-container">
+            <input type="text" id="menuSearch" class="search-bar" placeholder="Search delicious dishes (e.g., Jollof, Yam, Salad)...">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">🌓 Mode</button>
+        </div>
+    `;
+    
+    // Put controls right before the main menu wrapper
+    mainContainer.insertAdjacentHTML("beforebegin", controlsHTML);
+
+    // 2. SEARCH & FILTER LOGIC
+    const searchInput = document.getElementById("menuSearch");
+    
+    searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        const sections = document.querySelectorAll(".menu-section");
+
+        sections.forEach(section => {
+            let matchesInSection = 0;
+            
+            // Handle regular grid/compact items
+            const structuralItems = section.querySelectorAll(".menu-item, .compact-item, .menu-item-mini");
+            
+            structuralItems.forEach(item => {
+                const textContent = item.textContent.toLowerCase();
+                if (textContent.includes(searchTerm)) {
+                    item.classList.remove("hidden-element");
+                    matchesInSection++;
+                } else {
+                    item.classList.add("hidden-element");
+                }
+            });
+
+            // Toggle whole section visibility based on match existence
+            if (matchesInSection > 0 || searchTerm === "") {
+                section.classList.remove("hidden-element");
+            } else {
+                section.classList.add("hidden-element");
+            }
+        });
+    });
+
+    // 3. MODERN THEME TOGGLE LOGIC (WITH STORAGE SAVING PREFERENCE)
+    const themeToggleBtn = document.getElementById("themeToggle");
+    const currentTheme = localStorage.getItem("dinePackTheme") || "light";
+
+    // Initialize layout theme on load
+    document.documentElement.setAttribute("data-theme", currentTheme);
+
+    themeToggleBtn.addEventListener("click", () => {
+        let targetTheme = "light";
+        if (document.documentElement.getAttribute("data-theme") === "light") {
+            targetTheme = "dark";
+        }
+        
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        localStorage.setItem("dinePackTheme", targetTheme);
+    });
+});
+</script>
+
+<style>
+/* ==========================================
+   1. VARIABLES & DESIGN TOKENS
+   ========================================== */
+:root {
+    --bg-primary: #fcfbf7;
+    --bg-card: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #666666;
+    --accent: #d9383a; /* Primary Dine & Pack Red */
+    --accent-yellow: #f5a623; /* Chef's Choice Accent */
+    --border-color: #eae6df;
+    --radius-lg: 16px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --max-width: 1100px;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #f5f5f5;
+    --text-muted: #a0a0a0;
+    --border-color: #2a2a2a;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   2. CORE RESETS & GLOBAL STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: var(--transition);
+    padding-bottom: 60px;
+}
+
+/* ==========================================
+   3. THEME & SEARCH CONTROLS (UTILITIES)
+   ========================================== */
+.controls-container {
+    max-width: var(--max-width);
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(217, 56, 58, 0.15);
+}
+
+.theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--text-main);
+    color: var(--bg-primary);
+}
+
+/* ==========================================
+   4. HEADER & FOOTER
+   ========================================== */
+.menu-header {
+    text-align: center;
+    padding: 4rem 1.5rem 2rem;
+}
+
+.brand-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+}
+
+.brand-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.brand-link:hover {
+    color: var(--accent);
+}
+
+.brand-tagline {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.8rem;
+    color: var(--text-main);
+}
+
+.menu-footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+/* ==========================================
+   5. LAYOUT & CONTAINERS
+   ========================================== */
+.menu-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+.sub-section-heading {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 2.5rem 0 1.2rem;
+    color: var(--text-main);
+}
+
+/* ==========================================
+   6. GRIDS & CARD STYLES
+   ========================================== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.2rem;
+}
+
+.menu-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.item-price {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+/* Featured / Highlighted Items */
+.feature-item {
+    border-left: 4px solid var(--accent);
+}
+
+/* ==========================================
+   7. BADGES & NOTICES
+   ========================================== */
+.badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+.badge-yellow {
+    background-color: rgba(245, 166, 35, 0.15);
+    color: var(--accent-yellow);
+}
+
+.badge-red {
+    background-color: rgba(217, 56, 58, 0.15);
+    color: var(--accent);
+}
+
+.notice-box {
+    background-color: var(--bg-card);
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.notice-box p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.txt-red {
+    color: var(--accent);
+}
+
+/* ==========================================
+   8. COMPACT GRIDS & MINI ITEMS
+   ========================================== */
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.compact-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow);
+}
+
+.compact-item strong {
+    color: var(--accent);
+}
+
+/* Build-your-own Swallow Columns */
+.swallow-build-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sub-column h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.menu-item-mini {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.95rem;
+}
+
+.menu-item-mini span:last-child {
+    font-weight: 700;
+}
+
+/* Helper Class for search matching hidden element handling */
+.hidden-element {
+    display: none !important;
+}
+
+</style>
 </body>
 </html>
